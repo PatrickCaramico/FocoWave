@@ -1,41 +1,41 @@
-# ⏳ Gerador de Foco - FocoWave: Seu Aliado na Produtividade com a Técnica Pomodoro
+# ⏳ Focus Generator: Your Productivity Ally with the Pomodoro Technique
 
-## ✨ Visão Geral
+## ✨ Overview
 
-O **FocoWave** é uma ferramenta web elegante e intuitiva projetada para maximizar sua produtividade e concentração, utilizando a renomada Técnica Pomodoro. Inspirado na simplicidade e eficácia, este aplicativo ajuda você a gerenciar seu tempo de trabalho e pausas de forma eficiente, promovendo sessões de foco ininterrupto e descanso merecido.
+The **Focus Generator** is an elegant and intuitive web tool designed to maximize your productivity and concentration using the renowned Pomodoro Technique. Inspired by simplicity and effectiveness, this application helps you manage your work and break times efficiently, promoting uninterrupted focus sessions and well-deserved rest.
 
-Com uma interface limpa e personalizável, o Gerador de Foco é o ambiente ideal para quem busca otimizar a rotina de estudos ou trabalho, minimizando distrações e potencializando a atenção.
+With a clean and customizable interface, the Focus Generator provides the ideal environment for anyone looking to optimize their study or work routine, minimizing distractions and enhancing attention.
 
-## 🚀 Funcionalidades Chave
+## 🚀 Key Features
 
--   **Timer Personalizável:** Defina o tempo exato para suas sessões de `Foco`, `Pausa Curta` e `Pausa Longa`, adaptando-se perfeitamente à sua rotina.
--   **Contador de Ciclos Pomodoro:** Monitore seu progresso com um contador visual de ciclos (1 de 4), garantindo a adesão à técnica e a merecida pausa longa ao final de cada bloco.
--   **Sons de Ambiente Relaxantes:** Escolha entre uma variedade de sons de fundo (Chuva, Cafeteria, Ruído Branco, Piano Suave, Sons da Natureza ou Nenhum) para criar a atmosfera perfeita para sua concentração.
--   **Alertas Sonoros:** Notificações discretas para indicar o fim de cada sessão.
--   **Persistência de Configurações:** Suas últimas configurações de tempo e som são salvas automaticamente no navegador (Local Storage), garantindo que você retome de onde parou.
--   **Design Otimizado:** Layout ajustado para evitar barras de rolagem desnecessárias, garantindo uma experiência de usuário impecável em diversos dispositivos.
+-   **Customizable Timer:** Set the exact duration (in minutes) for your `Focus`, `Short Break`, and `Long Break` sessions, adapting perfectly to your routine.
+-   **Pomodoro Cycle Counter:** Monitor your progress with a visual cycle counter (e.g., "Cycle: 1 of 4"), ensuring adherence to the technique and a well-deserved long break at the end of each block.
+-   **Relaxing Ambient Sounds:** Choose from a variety of background sounds (Rain, Cafe, White Noise, Gentle Piano, Nature Sounds, or None) to create the perfect atmosphere for your concentration.
+-   **Sound Alerts:** Discreet notifications to signal the end of each session.
+-   **Settings Persistence:** Your last time and sound configurations are automatically saved in the browser (Local Storage), ensuring you pick up right where you left off.
+-   **Optimized Design:** Layout adjusted to avoid unnecessary vertical scrollbars, ensuring a flawless user experience across various devices.
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Technologies Used
 
--   **HTML5:** Estrutura semântica e acessível do conteúdo.
--   **CSS3:** Estilização moderna e responsiva, com foco em uma experiência visual agradável.
--   **JavaScript (ES6+):** Lógica dinâmica para o timer, controle de áudio, gerenciamento de estado e persistência de dados (Local Storage).
+-   **HTML5:** Semantic and accessible content structure.
+-   **CSS3:** Modern and responsive styling, focusing on a pleasant visual experience.
+-   **JavaScript (ES6+):** Dynamic logic for the timer, audio control, state management, and data persistence (Local Storage).
 
-## 💡 Como Usar
+## 💡 How to Use
 
-1.  **Configure seus Tempos:** No início da página, insira a duração desejada (em minutos) para o Foco, Pausa Curta e Pausa Longa.
-2.  **Escolha seu Som:** Na seção "Som de Fundo", selecione o áudio que mais te agrada.
-3.  **Inicie o Foco:** Clique no botão "Iniciar Foco".
-    * *O contador "Ciclo: X de 4" ajuda você a acompanhar seu progresso, indicando quando a próxima pausa longa está se aproximando.*
-4.  **Reinicie:** Use o botão "Reiniciar" a qualquer momento para zerar o timer e o contador de ciclos.
+1.  **Set Your Times:** At the top of the page, enter your desired duration (in minutes) for Focus, Short Break, and Long Break.
+2.  **Choose Your Sound:** In the "Background Sound" section, select the audio that best suits you.
+3.  **Start Focusing:** Click the "Start Focus" button to begin your first session.
+    * *The "Cycle: X of 4" counter helps you track your progress, indicating when the next long break is approaching.*
+4.  **Reset:** Use the "Reset" button at any time to clear the timer and cycle counter.
 
-## 🤝 Contribuições
+## 🤝 Contributions
 
-Sinta-se à vontade para explorar o código, sugerir melhorias ou relatar bugs.
+Feel free to explore the code, suggest improvements, or report bugs.
 
-## 📄 Licença
+## 📄 License
 
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
 ---
-**Desenvolvido com 💜 por [[PatrickCaramico](https://github.com/PatrickCaramico)]**
+**Developed with 💜 by [[PatrickCaramico](https://github.com/PatrickCaramico)]**
