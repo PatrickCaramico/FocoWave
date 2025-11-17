@@ -1,8 +1,8 @@
-# ⏳ Focus Generator: Your Productivity Ally with the Pomodoro Technique
+# ⏳ Focus Generator - FocoWaves: Your Productivity Ally with the Pomodoro Technique
 
 ## ✨ Overview
 
-The **Focus Generator** is an elegant and intuitive web tool designed to maximize your productivity and concentration using the renowned Pomodoro Technique. Inspired by simplicity and effectiveness, this application helps you manage your work and break times efficiently, promoting uninterrupted focus sessions and well-deserved rest.
+The **FocoWaves** is an elegant and intuitive web tool designed to maximize your productivity and concentration using the renowned Pomodoro Technique. Inspired by simplicity and effectiveness, this application helps you manage your work and break times efficiently, promoting uninterrupted focus sessions and well-deserved rest.
 
 With a clean and customizable interface, the Focus Generator provides the ideal environment for anyone looking to optimize their study or work routine, minimizing distractions and enhancing attention.
 
