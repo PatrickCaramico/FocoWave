@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const minutes = Math.floor(currentTime / 60);
         const seconds = currentTime % 60;
         display.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-        document.title = `${display.textContent} - FocoWave`;
+        document.title = `${display.textContent} - FocoWave`; // Nome do projeto atualizado!
         
         btnStartPause.textContent = isPaused ? `Iniciar ${currentMode === 'focus' ? 'Foco' : 'Pausa'}` : 'Pausar';
         document.body.setAttribute('data-mode', currentMode);
@@ -160,11 +160,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (currentMode === 'focus') {
                 currentCycle++;
-                updateCycleDisplay(); // ✅ CORREÇÃO 1: Atualiza o display após incrementar
+                updateCycleDisplay();
                 
                 if (currentCycle >= 4) {
                     currentCycle = 0;
-                    updateCycleDisplay(); // ✅ CORREÇÃO 2: Atualiza o display após zerar o contador
+                    updateCycleDisplay();
                     switchMode('long');
                 } else {
                     switchMode('short');
@@ -186,7 +186,10 @@ document.addEventListener('DOMContentLoaded', () => {
     btnStartPause.addEventListener('click', () => {
         if (isPaused) {
             isPaused = false;
-            switchMode(currentMode); 
+            
+            // ✅ CORREÇÃO: Removido switchMode(currentMode) para evitar o reset.
+            // O timer agora apenas retoma a contagem de onde parou.
+
             timerInterval = setInterval(countdown, 1000);
 
             if (currentMode === 'focus') {
@@ -216,20 +219,22 @@ document.addEventListener('DOMContentLoaded', () => {
     timeInputs.forEach(input => {
         input.addEventListener('input', () => {
             if (input.getAttribute('data-mode') === currentMode) {
-                switchMode(currentMode);
+                // Se o usuário altera o tempo no modo atual, forçamos o reset para o novo valor
+                switchMode(currentMode); 
             }
             saveSettings();
         });
     });
 
 
-    // Botões de SOM
+    // Botões de SOM (Troca de som em tempo real)
     soundButtons.forEach(button => {
         button.addEventListener('click', () => {
             currentSound = button.getAttribute('data-sound');
             soundButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             
+            // Esta lógica garante que o som mude AGORA, sem precisar reiniciar o timer.
             if (!isPaused && currentMode === 'focus') {
                 playCurrentSound();
             }
