@@ -1,3 +1,55 @@
+## 📄 FocoWave Project Documentation
+
+### ✨ Version 1.1.0 - The Focus is Yours (Theme & Flexibility)
+
+This FocoWave update focuses on delivering greater flexibility and customization in setting focus time and visual experience.
+
+***
+
+### 🚀 Changelog
+
+| Feature | Description |
+
+| :--- | :--- |
+
+| **Flexible Theme (Light/Dark)** | Added a toggle button (**sun/moon**) to switch between the Dark Theme (default) and a new Light Theme. Theme preference is automatically saved in the browser. |
+
+| **Configurable Focus (H/M)** | **Focus** time can now be set with separate fields for **Hours** and **Minutes**, allowing for the configuration of long work sessions (maximum of 10 hours). Pauses continue in minutes. |
+
+**Complete Persistence** | All settings (times, theme, sound, and cycle) are saved in `localStorage`, ensuring your preferences are maintained when you reopen FocoWave. |
+
+**Layout Optimization** | **Layout Fine-Tuning:** Optimized the scale and horizontal spacing of the inputs, ensuring that the three time groups (**Focus (h/min)**, **Short Pause**, and **Long Pause**) align perfectly on the same line, even in 100% view. |
+
+**Aesthetic Adjustment** | The theme toggle button has been repositioned with a **3px** spacing from the right edge, improving visual balance. |
+
+***
+
+### 💡 Quick Start Guide (New Features)
+
+#### 1. Switching Themes
+
+* **Location:** Use the toggle button (**Sun/Moon**) located in the upper right corner of the main container.
+
+* **Usage:** Click the button to switch the color scheme.
+
+#### 2. Setting Focus Time (H/M)
+
+The **Focus** field is now divided for greater precision:
+
+* **Focus (h):** Enter the desired number of hours (e.g., `1`).
+
+* **Focus (min):** Enter the desired number of minutes to complete the time.
+
+> 📝 **Note:** The **Short Break (min)** and **Long Break (min)** fields remain configurable only in **Minutes**, following the Pomodoro standard for intervals.
+
+
+
+
+
+
+
+
+
 # ⏳ Focus Generator - FocoWaves: Your Productivity Ally with the Pomodoro Technique
 
 ## ✨ Overview
