@@ -1,10 +1,13 @@
 // Variável global para o Contexto de Áudio
 let audioContext = null;
 
-// Chaves para o Local Storage (facilita a gestão dos dados)
+// Chaves para o Local Storage
 const LS_TIMES = 'pomodoroTimes';
 const LS_SOUND = 'pomodoroSound';
 const LS_CYCLE = 'pomodoroCycle';
+const LS_THEME = 'pomodoroTheme'; 
+const LS_FOCUS_H = 'pomodoroFocusH'; // NOVO: Chave para foco em Horas
+const LS_FOCUS_M = 'pomodoroFocusM'; // NOVO: Chave para foco em Minutos
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -13,13 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const display = document.getElementById('timer-display');
     const btnStartPause = document.getElementById('btn-start-pause');
     const btnReset = document.getElementById('btn-reset');
-    const focusInput = document.getElementById('focus-input');
+    
+    // NOVOS INPUTS DE FOCO
+    const focusHourInput = document.getElementById('focus-hour-input'); 
+    const focusMinInput = document.getElementById('focus-min-input');
+    
     const shortInput = document.getElementById('short-input');
     const longInput = document.getElementById('long-input');
-    const timeInputs = document.querySelectorAll('.time-config input');
+    
+    const timeInputs = document.querySelectorAll('.time-config input[type="number"]');
     const cycleCounterDisplay = document.getElementById('cycle-counter');
     const soundButtons = document.querySelectorAll('.sound-btn');
     const volumeSlider = document.getElementById('volume-slider');
+    
+    const btnThemeToggle = document.getElementById('btn-theme-toggle');
 
     // Elementos de Áudio
     const audioRain = document.getElementById('audio-rain');
@@ -37,52 +47,72 @@ document.addEventListener('DOMContentLoaded', () => {
     let isPaused = true;
     let currentSound = 'none';
     let currentAudio = null;
-    let currentCycle = 0; 
+    let currentCycle = 0;
+    let currentTheme = 'dark';
 
 
     // ----- 3. FUNÇÕES HELPER (AJUDANTES) -----
     
     function getTimesFromInputs() {
+        const focusHours = parseInt(focusHourInput.value, 10) * 3600; // Horas em segundos
+        const focusMinutes = parseInt(focusMinInput.value, 10) * 60; // Minutos em segundos
+        
         return {
-            focus: parseInt(focusInput.value, 10) * 60,
+            // Soma as horas e minutos
+            focus: focusHours + focusMinutes,
+            // Pausas permanecem em minutos * 60
             short: parseInt(shortInput.value, 10) * 60,
             long: parseInt(longInput.value, 10) * 60,
         };
     }
 
     function saveSettings() {
-        const times = {
-            focus: focusInput.value,
+        // Salva foco separado em H e M
+        localStorage.setItem(LS_FOCUS_H, focusHourInput.value);
+        localStorage.setItem(LS_FOCUS_M, focusMinInput.value);
+        
+        const breakTimes = {
             short: shortInput.value,
             long: longInput.value
         };
-        localStorage.setItem(LS_TIMES, JSON.stringify(times));
+        localStorage.setItem(LS_TIMES, JSON.stringify(breakTimes)); // Pausas agrupadas
+        
         localStorage.setItem(LS_SOUND, currentSound);
         localStorage.setItem(LS_CYCLE, currentCycle);
+        localStorage.setItem(LS_THEME, currentTheme);
     }
     
     function loadSettings() {
-        const savedTimes = JSON.parse(localStorage.getItem(LS_TIMES));
-        if (savedTimes) {
-            focusInput.value = savedTimes.focus;
-            shortInput.value = savedTimes.short;
-            longInput.value = savedTimes.long;
+        const savedFocusH = localStorage.getItem(LS_FOCUS_H);
+        const savedFocusM = localStorage.getItem(LS_FOCUS_M);
+        
+        // Carrega o Foco
+        if (savedFocusH) focusHourInput.value = savedFocusH;
+        if (savedFocusM) focusMinInput.value = savedFocusM;
+
+        const savedBreakTimes = JSON.parse(localStorage.getItem(LS_TIMES));
+        // Carrega as Pausas
+        if (savedBreakTimes) {
+            shortInput.value = savedBreakTimes.short;
+            longInput.value = savedBreakTimes.long;
         }
 
         const savedSound = localStorage.getItem(LS_SOUND);
         const savedCycle = parseInt(localStorage.getItem(LS_CYCLE), 10);
-        
+        const savedTheme = localStorage.getItem(LS_THEME);
+
         if (savedSound) {
             currentSound = savedSound;
-            soundButtons.forEach(btn => btn.classList.remove('active'));
-            const activeBtn = document.querySelector(`.sound-btn[data-sound="${savedSound}"]`);
-            if (activeBtn) {
-                activeBtn.classList.add('active');
-            }
         }
         
         if (!isNaN(savedCycle)) {
             currentCycle = savedCycle;
+        }
+
+        // Aplica o tema salvo
+        if (savedTheme) {
+            currentTheme = savedTheme;
+            document.body.classList.toggle('light-mode', currentTheme === 'light');
         }
     }
 
@@ -94,12 +124,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const minutes = Math.floor(currentTime / 60);
         const seconds = currentTime % 60;
         display.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-        document.title = `${display.textContent} - FocoWave`; // Nome do projeto atualizado!
+        document.title = `${display.textContent} - FocoWave`;
         
         btnStartPause.textContent = isPaused ? `Iniciar ${currentMode === 'focus' ? 'Foco' : 'Pausa'}` : 'Pausar';
         document.body.setAttribute('data-mode', currentMode);
     }
-
+    
     function stopAllSounds() {
         audioRain.pause();
         audioCafe.pause();
@@ -115,24 +145,24 @@ document.addEventListener('DOMContentLoaded', () => {
     function playCurrentSound() {
         stopAllSounds();
 
-        if (currentSound === 'rain') { currentAudio = audioRain; } 
-        else if (currentSound === 'cafe') { currentAudio = audioCafe; } 
-        else if (currentSound === 'noise') { currentAudio = audioNoise; } 
-        else if (currentSound === 'piano') { currentAudio = audioPiano; } 
+        if (currentSound === 'rain') { currentAudio = audioRain; }    
+        else if (currentSound === 'cafe') { currentAudio = audioCafe; }    
+        else if (currentSound === 'noise') { currentAudio = audioNoise; }    
+        else if (currentSound === 'piano') { currentAudio = audioPiano; }    
         else if (currentSound === 'nature') { currentAudio = audioNature; }
 
         if (currentAudio) {
             currentAudio.volume = volumeSlider.value;
-            currentAudio.play().catch(e => console.error("Falha no play:", e)); 
+            currentAudio.play().catch(e => console.error("Falha no play:", e));    
         }
     }
 
     function switchMode(newMode) {
         currentMode = newMode;
-        const times = getTimesFromInputs(); 
+        const times = getTimesFromInputs();    
 
-        if (currentMode === 'focus') { currentTime = times.focus; } 
-        else if (currentMode === 'short') { currentTime = times.short; } 
+        if (currentMode === 'focus') { currentTime = times.focus; }    
+        else if (currentMode === 'short') { currentTime = times.short; }    
         else if (currentMode === 'long') { currentTime = times.long; }
 
         isPaused = true;
@@ -149,14 +179,14 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCycleDisplay();
     }
 
-    // ----- 4. O TIMER (O CORAÇÃO - Lógica do Pomodoro) -----
+    // ----- 4. O TIMER (Lógica do Pomodoro) -----
 
     function countdown() {
         if (currentTime <= 0) {
             clearInterval(timerInterval);
             audioAlert.play();
             stopAllSounds();
-            isPaused = true; 
+            isPaused = true;    
 
             if (currentMode === 'focus') {
                 currentCycle++;
@@ -186,10 +216,10 @@ document.addEventListener('DOMContentLoaded', () => {
     btnStartPause.addEventListener('click', () => {
         if (isPaused) {
             isPaused = false;
-            
-            // ✅ CORREÇÃO: Removido switchMode(currentMode) para evitar o reset.
-            // O timer agora apenas retoma a contagem de onde parou.
-
+            // Garante que o tempo de foco seja maior que 0
+            if (currentTime <= 0) {
+                 initTimer(); // Reinicializa com os inputs atuais
+            }
             timerInterval = setInterval(countdown, 1000);
 
             if (currentMode === 'focus') {
@@ -218,23 +248,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inputs de Tempo (Configurável)
     timeInputs.forEach(input => {
         input.addEventListener('input', () => {
-            if (input.getAttribute('data-mode') === currentMode) {
-                // Se o usuário altera o tempo no modo atual, forçamos o reset para o novo valor
-                switchMode(currentMode); 
+            // Verifica se o input mudado é de horas ou minutos de foco
+            const inputMode = input.getAttribute('data-mode');
+            
+            if (inputMode === 'focus-h' || inputMode === 'focus-m') {
+                if (currentMode === 'focus') {
+                    // Se o foco é alterado, reseta o tempo de foco para o novo valor
+                    switchMode('focus');
+                }
+            } else if (inputMode === currentMode) {
+                // Se pausa é alterada no modo pausa, reseta
+                switchMode(currentMode);
             }
+
             saveSettings();
         });
     });
 
+    // Listener para o botão de alternância de Tema
+    btnThemeToggle.addEventListener('click', () => {
+        const isLight = document.body.classList.toggle('light-mode');
+        currentTheme = isLight ? 'light' : 'dark';
+        saveSettings();
+    });
 
-    // Botões de SOM (Troca de som em tempo real)
+
+    // Botões de SOM e Controle de VOLUME (Mantidos)
     soundButtons.forEach(button => {
         button.addEventListener('click', () => {
             currentSound = button.getAttribute('data-sound');
             soundButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             
-            // Esta lógica garante que o som mude AGORA, sem precisar reiniciar o timer.
             if (!isPaused && currentMode === 'focus') {
                 playCurrentSound();
             }
@@ -242,7 +287,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Controle de VOLUME
     volumeSlider.addEventListener('input', () => {
         const volume = volumeSlider.value;
         audioRain.volume = volume;
@@ -255,10 +299,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // ----- 6. INICIALIZAÇÃO -----
     loadSettings();
     initTimer();
-    document.querySelector(`.sound-btn[data-sound="${currentSound}"]`).classList.add('active');
+    const activeSoundButton = document.querySelector(`.sound-btn[data-sound="${currentSound}"]`);
+    if (activeSoundButton) {
+        activeSoundButton.classList.add('active');
+    }
 
-
-    // ----- 7. TRUQUE PARA DESBLOQUEAR ÁUDIO -----
+    // ----- 7. TRUQUE PARA DESBLOQUEAR ÁUDIO (Mantido) -----
     
     function unlockAudioContext() {
         if (!audioContext) {
