@@ -1,46 +1,51 @@
 /* Importação de uma fonte limpa */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+/* Importação de Ícones (Font Awesome para o botão de tema) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
-/* ----- Configuração Geral ----- */
+
+/* ----- Configuração Geral (Tema Escuro Padrão) ----- */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #121212; 
-    color: #FFFFFF; 
+    background-color: #121212;
+    color: #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* ----- O Container Principal (Ajustes de Scrollbar) ----- */
+/* ----- O Container Principal (ESCALA MÁXIMA AJUSTADA) ----- */
 .container {
-    background-color: #1E1E1E; 
-    padding: 1rem 3rem; /* Padding vertical reduzido */
+    background-color: #1E1E1E;
+    padding: 1rem 1.5rem; 
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     width: 90%;
-    max-width: 450px;
+    max-width: 380px; 
     text-align: center;
+    position: relative; 
 }
 
 h1 {
-    margin-top: 0.5rem; 
-    color: #BB86FC; 
-    font-size: 1.8rem; /* AJUSTE: Reduzido o tamanho do título */
+    margin-top: 0.5rem;
+    color: #BB86FC;
+    font-size: 1.7rem; 
 }
 
 /* ----- Contador de Ciclos ----- */
 #cycle-counter {
     margin-top: 10px;
-    font-size: 1.1rem;
-    color: #03DAC5; 
+    font-size: 1rem; 
+    color: #03DAC5;
     font-weight: 500;
 }
 
-/* ----- O Timer (AJUSTE DE DENSIDADE) ----- */
+/* ----- O Timer ----- */
 .timer {
-    font-size: 4.5rem; /* AJUSTE: Reduzido de 5rem para 4.5rem */
+    font-size: 4rem; 
     font-weight: 700;
     margin: 1.5rem 0;
     color: #FFFFFF;
@@ -49,72 +54,97 @@ h1 {
 /* --- Estilização do Tempo Configurável --- */
 
 .time-config {
-    display: flex; 
-    justify-content: space-around; 
-    gap: 15px; 
+    display: flex;
+    justify-content: space-between; /* Usando space-between para distribuir melhor o espaço */
+    gap: 3px; /* Reduzido o gap */
     margin-top: 1rem;
-    margin-bottom: 2rem;
-    padding: 0 10px; 
+    margin-bottom: 1.5rem; 
+    padding: 0; 
     width: 100%;
+    flex-wrap: wrap; 
 }
 
 .time-group {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* Removido flex-basis para dar mais flexibilidade e confiar no space-between */
 }
 
 .time-config label {
-    font-size: 0.9rem;
-    color: #AAA; 
-    margin-bottom: 5px;
+    font-size: 0.85rem; 
+    color: #AAA;
+    margin-bottom: 4px; 
     font-weight: 500;
+    text-align: center;
 }
 
+/* ESTILO: Container para Horas/Minutos */
+.focus-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px; /* Removido o gap interno */
+}
+
+.focus-inputs input {
+    width: 30px !important; 
+    font-size: 0.95rem !important; 
+    padding: 5px 7px; 
+}
+
+.focus-inputs span {
+    font-size: 0.75rem; 
+    color: #AAA;
+    margin-right: 0px; /* ELIMINADO MARGEM AQUI PARA ECONOMIZAR ESPAÇO */
+    margin-left: 2px; /* Adicionado um micro espaçamento à esquerda da label */
+}
+
+/* Estilo para inputs de tempo (Pausa Curta e Longa) */
 .time-config input[type="number"] {
-    width: 60px; 
-    padding: 8px 10px;
+    width: 50px; 
+    padding: 5px 8px; 
     border: 1px solid #444;
     border-radius: 8px;
-    background-color: #333; 
+    background-color: #333;
     color: #FFFFFF;
     text-align: center;
-    /* AJUSTE: Reduzido de 1.2rem para 1.1rem */
-    font-size: 1.1rem; 
+    font-size: 1rem;
     font-weight: 700;
-    /* -moz-appearance: textfield;  */
+    margin: 0;
 }
 
-/* Remove as setas do input em navegadores Webkit (Chrome, Safari) */
+/* Remove as setas do input */
 .time-config input::-webkit-outer-spin-button,
 .time-config input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
+
 /* ----- Botões de Controle (Iniciar, Resetar) ----- */
 .controls {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .controls button {
     border: none;
-    padding: 0.8rem 1.5rem;
-    margin: 0 10px;
+    padding: 0.6rem 1.2rem; 
+    margin: 0 5px; 
     border-radius: 5px;
-    font-size: 1.1rem;
+    font-size: 1rem; 
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 #btn-start-pause {
-    background-color: #03DAC5; 
+    background-color: #03DAC5;
     color: #121212;
 }
 
 #btn-reset {
-    background-color: #CF6679; 
+    background-color: #CF6679;
     color: #121212;
 }
 
@@ -122,25 +152,27 @@ h1 {
     opacity: 0.8;
 }
 
-/* ----- Seletor de Sons ----- */
+/* ----- Seletor de Sons e Botão de Tema ----- */
 .sound-picker h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     font-weight: 400;
     color: #AAA;
+    font-size: 0.9rem;
 }
 
 .sound-btn {
     background-color: #333;
     color: #AAA;
     border: none;
-    padding: 0.5rem 1rem;
-    margin: 0 5px 10px 5px;
-    border-radius: 20px; 
+    padding: 0.3rem 0.7rem; 
+    margin: 0 3px 8px 3px; 
+    border-radius: 20px;
     cursor: pointer;
     transition: all 0.2s ease;
+    font-size: 0.85rem; 
 }
 
-/* ESTADO ATIVO: Quando um som está selecionado */
+/* ESTADO ATIVO do Som */
 .sound-btn.active {
     background-color: #03DAC5;
     color: #121212;
@@ -149,5 +181,94 @@ h1 {
 
 #volume-slider {
     width: 80%;
-    margin-top: 10px;
+    margin-top: 8px;
+}
+
+/* Botão de Alternar Tema (Dark Mode padrão) */
+#btn-theme-toggle {
+    position: absolute;
+    top: 15px;
+    right: 3px;
+    background: none;
+    border: none;
+    font-size: 1.3rem; 
+    color: #03DAC5;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#btn-theme-toggle::before {
+    content: "\f186"; 
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+
+/* ---------------------------------------------------------------------- */
+/* ☀️ TEMA CLARO (Light Mode) */
+/* ---------------------------------------------------------------------- */
+body.light-mode {
+    background-color: #F0F2F5;
+    color: #333333;
+}
+/* As regras de Light Mode herdam os tamanhos reduzidos acima */
+
+body.light-mode .container {
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode h1 {
+    color: #0077B6;
+}
+
+body.light-mode #cycle-counter {
+    color: #00A896;
+}
+
+body.light-mode .timer {
+    color: #1A1A1A;
+}
+
+body.light-mode .time-config input[type="number"] {
+    background-color: #F8F8F8;
+    color: #1A1A1A;
+    border: 1px solid #CCCCCC;
+}
+
+body.light-mode .focus-inputs span {
+    color: #666;
+}
+
+body.light-mode .time-config label,
+body.light-mode .sound-picker h3 {
+    color: #666;
+}
+
+body.light-mode #btn-start-pause {
+    background-color: #00A896;
+    color: #FFFFFF;
+}
+
+body.light-mode #btn-reset {
+    background-color: #E74C3C;
+    color: #FFFFFF;
+}
+
+body.light-mode .sound-btn {
+    background-color: #E0E0E0;
+    color: #666;
+}
+
+body.light-mode .sound-btn.active {
+    background-color: #00A896;
+    color: #FFFFFF;
+}
+
+body.light-mode #btn-theme-toggle {
+    color: #0077B6;
+}
+
+body.light-mode #btn-theme-toggle::before {
+    content: "\f185";
 }
