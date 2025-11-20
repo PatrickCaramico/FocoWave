@@ -1,7 +1,7 @@
 # ⏳ Gerador de Foco - FocoWave: Seu Aliado de Produtividade com a Técnica Pomodoro
 
 <div align="center">
-  <a href="[FocoWave](https://focowaves.netlify.app/)" target="_blank">
+  <a href="https://focowaves.netlify.app/" target="_blank">
     <img src="https://img.shields.io/badge/Acesse_o_Projeto_Online-000?style=for-the-badge&logo=vercel&logoColor=white" alt="Deploy Link">
   </a>
 </div>
