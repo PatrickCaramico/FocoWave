@@ -152,5 +152,5 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE).
 ---
 <div align="center">
   <br>
-  <p><b>Desenvolvido com 💜 por <a href="https://github.com/PatrickCaramico">Patrick Caramico</a></b></p>
+  <p><b>Desenvolvido com por <a href="https://github.com/PatrickCaramico">Patrick Caramico</a></b></p>
 </div>
