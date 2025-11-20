@@ -1,7 +1,7 @@
 # ⏳ Gerador de Foco - FocoWave: Seu Aliado de Produtividade com a Técnica Pomodoro
 
 <div align="center">
-  <a href="LINK_DO_SEU_SITE_AQUI" target="_blank">
+  <a href="[FocoWave](https://focowaves.netlify.app/)" target="_blank">
     <img src="https://img.shields.io/badge/Acesse_o_Projeto_Online-000?style=for-the-badge&logo=vercel&logoColor=white" alt="Deploy Link">
   </a>
 </div>
@@ -28,10 +28,10 @@ Confira como o **FocoWave** se adapta ao seu estilo, seja no modo claro ou escur
     </tr>
     <tr>
       <td>
-        <img src="./assets/print-claro.png" alt="FocoWave Tema Claro" width="400">
+        <img src="assets/images/FocoWave_Claro.png" alt="FocoWave Tema Claro" width="400">
       </td>
       <td>
-        <img src="./assets/print-escuro.png" alt="FocoWave Tema Escuro" width="400">
+        <img src="assets/images/FocoWave_Escuro.png" alt="FocoWave Tema Escuro" width="400">
       </td>
     </tr>
   </table>
@@ -40,7 +40,7 @@ Confira como o **FocoWave** se adapta ao seu estilo, seja no modo claro ou escur
 ### 🎥 Em Ação
 Veja o FocoWave funcionando (Timer e troca de temas):
 
-![Gif do Projeto](./assets/demo-focowave.gif)
+![Gif do Projeto](assets/images/Animacao_FocoWave.gif)
 
 ---
 
