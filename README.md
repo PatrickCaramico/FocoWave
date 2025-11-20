@@ -1,21 +1,20 @@
 # ⏳ Gerador de Foco - FocoWave: Seu Aliado de Produtividade com a Técnica Pomodoro
 
 <div align="center">
-  <a href="https://focowaves.netlify.app/" target="_blank">
-    <img src="https://img.shields.io/badge/Acesse_o_Projeto_Online-000?style=for-the-badge&logo=vercel&logoColor=white" alt="Deploy Link">
-  </a>
+  <a href="[https://focowaves.netlify.app/](https://focowaves.netlify.app/)" target="_blank">
+    <img src="[https://img.shields.io/badge/Acesse_o_Projeto_Online-000?style=for-the-badge&logo=vercel&logoColor=white](https://img.shields.io/badge/Acesse_o_Projeto_Online-000?style=for-the-badge&logo=vercel&logoColor=white)" alt="Deploy Link">
+  </a>
 </div>
 
 <br>
 
 <p align="center">
- <a href="#-visão-geral">Visão Geral</a> •
- <a href="#-demonstração-visual">Demonstração</a> •
- <a href="#-principais-funcionalidades-geral">Funcionalidades</a> •
- <a href="#-tecnologias">Tecnologias</a> •
- <a href="#-instalação-e-execução-local">Instalação</a> •
- <a href="#-aprendizados-e-desafios">Aprendizados</a> •
- <a href="#-roadmap-próximos-passos">Roadmap</a>
+  <a href="#-visão-geral">Visão Geral</a> •
+  <a href="#-demonstração-visual">Demonstração</a> •
+  <a href="#-principais-funcionalidades-geral">Funcionalidades</a> •
+  <a href="#-tecnologias-utilizadas">Tecnologias</a> •
+  <a href="#-instalação-e-execução-local">Instalação</a> •
+  <a href="#-roadmap-próximos-passos">Roadmap</a>
 </p>
 
 ---
@@ -33,20 +32,20 @@ Com uma interface limpa e personalizável, o Gerador de Foco oferece o ambiente 
 Confira como o **FocoWave** se adapta ao seu estilo, seja no modo claro ou escuro.
 
 <div align="center">
-  <table>
-    <tr>
-      <td align="center"><b>🌞 Tema Claro</b></td>
-      <td align="center"><b>🌚 Tema Escuro</b></td>
-    </tr>
-    <tr>
-      <td>
-        <img src="assets/images/FocoWave_Claro.png" alt="FocoWave Tema Claro" width="400">
-      </td>
-      <td>
-        <img src="assets/images/FocoWave_Escuro.png" alt="FocoWave Tema Escuro" width="400">
-      </td>
-    </tr>
-  </table>
+  <table>
+    <tr>
+      <td align="center"><b>🌞 Tema Claro</b></td>
+      <td align="center"><b>🌚 Tema Escuro</b></td>
+    </tr>
+    <tr>
+      <td>
+        <img src="assets/images/FocoWave_Claro.png" alt="FocoWave Tema Claro" width="400">
+      </td>
+      <td>
+        <img src="assets/images/FocoWave_Escuro.png" alt="FocoWave Tema Escuro" width="400">
+      </td>
+    </tr>
+  </table>
 </div>
 
 ### 🎥 Em Ação
@@ -73,11 +72,11 @@ Esta atualização foca em entregar maior flexibilidade na definição do tempo 
 
 #### 💡 Guia Rápido (Novos Recursos)
 
-1.  **Alternando Temas:** Use o botão (**Sol/Lua**) no canto superior direito.
-2.  **Definindo Tempo de Foco (H/M):**
-    * **Foco (h):** Insira as horas (ex: `1`).
-    * **Foco (min):** Insira os minutos.
-    * *> Nota: Pausas permanecem apenas em minutos.*
+1.  **Alternando Temas:** Use o botão (**Sol/Lua**) no canto superior direito.
+2.  **Definindo Tempo de Foco (H/M):**
+    * **Foco (h):** Insira as horas (ex: `1`).
+    * **Foco (min):** Insira os minutos.
+    * *> Nota: Pausas permanecem apenas em minutos.*
 
 ---
 
@@ -92,22 +91,22 @@ Esta atualização foca em entregar maior flexibilidade na definição do tempo 
 
 ## 🛠️ Tecnologias Utilizadas
 
-<div style="display: inline_block"><br>
-  <img align="center" alt="HTML5" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img align="center" alt="CSS3" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-  <img align="center" alt="Js" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-  <img align="center" alt="Git" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+<div style="display: inline-block"><br>
+  <img align="center" alt="HTML5" height="40" width="50" src="[https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg](https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg)">
+  <img align="center" alt="CSS3" height="40" width="50" src="[https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg](https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg)">
+  <img align="center" alt="Js" height="40" width="50" src="[https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg](https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg)">
+  <img align="center" alt="Git" height="40" width="50" src="[https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg)">
 </div>
 
 ## 📂 Estrutura do Projeto
 
 ```bash
 FocoWave/
-├── assets/          # Imagens (prints), ícones e sons
-├── css/             # Estilos (style.css)
-├── js/              # Lógica (script.js, timer.js)
-├── index.html       # Estrutura principal
-└── README.md        # Documentação
+├── assets/          # Imagens (prints), ícones e sons
+├── css/             # Estilos (style.css)
+├── js/              # Lógica (script.js, timer.js)
+├── index.html       # Estrutura principal
+└── README.md        # Documentação
 ```
 
 ## 🗺️ Roadmap (Próximos Passos)
