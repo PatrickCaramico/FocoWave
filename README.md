@@ -1,93 +1,79 @@
-## 📄 FocoWave Project Documentation
+## 📄 Documentação do Projeto FocoWave
 
-### ✨ Version 1.1.0 - The Focus is Yours (Theme & Flexibility)
+### ✨ Versão 1.1.0 - O Foco é Seu (Tema & Flexibilidade)
 
-This FocoWave update focuses on delivering greater flexibility and customization in setting focus time and visual experience.
+Esta atualização do FocoWave foca em entregar maior flexibilidade e personalização na definição do tempo de foco e na experiência visual.
 
 ***
 
-### 🚀 Changelog
+### 🚀 Registro de Alterações (Changelog)
 
-| Feature | Description |
-
+| Recurso | Descrição |
 | :--- | :--- |
-
-| **Flexible Theme (Light/Dark)** | Added a toggle button (**sun/moon**) to switch between the Dark Theme (default) and a new Light Theme. Theme preference is automatically saved in the browser. |
-
-| **Configurable Focus (H/M)** | **Focus** time can now be set with separate fields for **Hours** and **Minutes**, allowing for the configuration of long work sessions (maximum of 10 hours). Pauses continue in minutes. |
-
-**Complete Persistence** | All settings (times, theme, sound, and cycle) are saved in `localStorage`, ensuring your preferences are maintained when you reopen FocoWave. |
-
-**Layout Optimization** | **Layout Fine-Tuning:** Optimized the scale and horizontal spacing of the inputs, ensuring that the three time groups (**Focus (h/min)**, **Short Pause**, and **Long Pause**) align perfectly on the same line, even in 100% view. |
-
-**Aesthetic Adjustment** | The theme toggle button has been repositioned with a **3px** spacing from the right edge, improving visual balance. |
+| **Tema Flexível (Claro/Escuro)** | Adicionado um botão de alternância (**sol/lua**) para trocar entre o Tema Escuro (padrão) e um novo Tema Claro. A preferência de tema é salva automaticamente no navegador. |
+| **Foco Configurável (H/M)** | O tempo de **Foco** agora pode ser definido com campos separados para **Horas** e **Minutos**, permitindo a configuração de longas sessões de trabalho (máximo de 10 horas). As pausas continuam em minutos. |
+| **Persistência Completa** | Todas as configurações (tempos, tema, som e ciclo) são salvas no `localStorage`, garantindo que suas preferências sejam mantidas ao reabrir o FocoWave. |
+| **Otimização de Layout** | **Ajuste Fino de Layout:** Otimizada a escala e o espaçamento horizontal dos inputs, garantindo que os três grupos de tempo (**Foco (h/min)**, **Pausa Curta** e **Pausa Longa**) fiquem perfeitamente alinhados na mesma linha, mesmo em visualização 100%. |
+| **Ajuste Estético** | O botão de troca de tema foi reposicionado com um espaçamento de **3px** da borda direita, melhorando o equilíbrio visual. |
 
 ***
 
-### 💡 Quick Start Guide (New Features)
+### 💡 Guia de Início Rápido (Novos Recursos)
 
-#### 1. Switching Themes
+#### 1. Alternando Temas
 
-* **Location:** Use the toggle button (**Sun/Moon**) located in the upper right corner of the main container.
+* **Localização:** Use o botão de alternância (**Sol/Lua**) localizado no canto superior direito do contêiner principal.
+* **Uso:** Clique no botão para trocar o esquema de cores.
 
-* **Usage:** Click the button to switch the color scheme.
+#### 2. Definindo o Tempo de Foco (H/M)
 
-#### 2. Setting Focus Time (H/M)
+O campo de **Foco** agora está dividido para maior precisão:
 
-The **Focus** field is now divided for greater precision:
+* **Foco (h):** Insira o número desejado de horas (ex: `1`).
+* **Foco (min):** Insira o número desejado de minutos para completar o tempo.
 
-* **Focus (h):** Enter the desired number of hours (e.g., `1`).
+> 📝 **Nota:** Os campos **Pausa Curta (min)** e **Pausa Longa (min)** permanecem configuráveis apenas em **Minutos**, seguindo o padrão Pomodoro para intervalos.
 
-* **Focus (min):** Enter the desired number of minutes to complete the time.
+<br>
 
-> 📝 **Note:** The **Short Break (min)** and **Long Break (min)** fields remain configurable only in **Minutes**, following the Pomodoro standard for intervals.
+# ⏳ Gerador de Foco - FocoWave: Seu Aliado de Produtividade com a Técnica Pomodoro
 
+## ✨ Visão Geral
 
+O **FocoWave** é uma ferramenta web elegante e intuitiva, projetada para maximizar sua produtividade e concentração utilizando a renomada Técnica Pomodoro. Inspirado na simplicidade e eficácia, esta aplicação ajuda você a gerenciar seus tempos de trabalho e descanso de forma eficiente, promovendo sessões de foco ininterruptas e descansos merecidos.
 
+Com uma interface limpa e personalizável, o Gerador de Foco oferece o ambiente ideal para quem busca otimizar a rotina de estudos ou trabalho, minimizando distrações e aumentando a atenção.
 
+## 🚀 Principais Funcionalidades
 
+- **Timer Personalizável:** Defina a duração exata (em minutos/horas) para suas sessões de `Foco`, `Pausa Curta` e `Pausa Longa`, adaptando-se perfeitamente à sua rotina.
+- **Contador de Ciclos Pomodoro:** Monitore seu progresso com um contador visual de ciclos (ex: "Ciclo: 1 de 4"), garantindo a adesão à técnica e uma pausa longa merecida ao final de cada bloco.
+- **Sons Ambientes Relaxantes:** Escolha entre uma variedade de sons de fundo (Chuva, Café, Ruído Branco, Piano Suave, Sons da Natureza ou Nenhum) para criar a atmosfera perfeita para sua concentração.
+- **Alertas Sonoros:** Notificações discretas para sinalizar o fim de cada sessão.
+- **Persistência de Configurações:** Suas últimas configurações de tempo e som são salvas automaticamente no navegador (Local Storage), garantindo que você retome exatamente de onde parou.
+- **Design Otimizado:** Layout ajustado para evitar barras de rolagem verticais desnecessárias, garantindo uma experiência de usuário fluida em vários dispositivos.
 
+## 🛠️ Tecnologias Utilizadas
 
+- **HTML5:** Estrutura de conteúdo semântica e acessível.
+- **CSS3:** Estilização moderna e responsiva, focando em uma experiência visual agradável.
+- **JavaScript (ES6+):** Lógica dinâmica para o timer, controle de áudio, gerenciamento de estado e persistência de dados (Local Storage).
 
+## 💡 Como Usar
 
-# ⏳ Focus Generator - FocoWaves: Your Productivity Ally with the Pomodoro Technique
+1. **Defina seus Tempos:** No topo da página, insira a duração desejada para Foco, Pausa Curta e Pausa Longa.
+2. **Escolha seu Som:** Na seção "Som de Fundo", selecione o áudio que melhor se adapta a você.
+3. **Comece a Focar:** Clique no botão "Iniciar Foco" para começar sua primeira sessão.
+    * *O contador "Ciclo: X de 4" ajuda você a acompanhar seu progresso, indicando quando a próxima pausa longa se aproxima.*
+4. **Reiniciar:** Use o botão "Reiniciar" a qualquer momento para zerar o timer e o contador de ciclos.
 
-## ✨ Overview
+## 🤝 Contribuições
 
-The **FocoWaves** is an elegant and intuitive web tool designed to maximize your productivity and concentration using the renowned Pomodoro Technique. Inspired by simplicity and effectiveness, this application helps you manage your work and break times efficiently, promoting uninterrupted focus sessions and well-deserved rest.
+Sinta-se à vontade para explorar o código, sugerir melhorias ou reportar bugs.
 
-With a clean and customizable interface, the Focus Generator provides the ideal environment for anyone looking to optimize their study or work routine, minimizing distractions and enhancing attention.
+## 📄 Licença
 
-## 🚀 Key Features
-
--   **Customizable Timer:** Set the exact duration (in minutes) for your `Focus`, `Short Break`, and `Long Break` sessions, adapting perfectly to your routine.
--   **Pomodoro Cycle Counter:** Monitor your progress with a visual cycle counter (e.g., "Cycle: 1 of 4"), ensuring adherence to the technique and a well-deserved long break at the end of each block.
--   **Relaxing Ambient Sounds:** Choose from a variety of background sounds (Rain, Cafe, White Noise, Gentle Piano, Nature Sounds, or None) to create the perfect atmosphere for your concentration.
--   **Sound Alerts:** Discreet notifications to signal the end of each session.
--   **Settings Persistence:** Your last time and sound configurations are automatically saved in the browser (Local Storage), ensuring you pick up right where you left off.
--   **Optimized Design:** Layout adjusted to avoid unnecessary vertical scrollbars, ensuring a flawless user experience across various devices.
-
-## 🛠️ Technologies Used
-
--   **HTML5:** Semantic and accessible content structure.
--   **CSS3:** Modern and responsive styling, focusing on a pleasant visual experience.
--   **JavaScript (ES6+):** Dynamic logic for the timer, audio control, state management, and data persistence (Local Storage).
-
-## 💡 How to Use
-
-1.  **Set Your Times:** At the top of the page, enter your desired duration (in minutes) for Focus, Short Break, and Long Break.
-2.  **Choose Your Sound:** In the "Background Sound" section, select the audio that best suits you.
-3.  **Start Focusing:** Click the "Start Focus" button to begin your first session.
-    * *The "Cycle: X of 4" counter helps you track your progress, indicating when the next long break is approaching.*
-4.  **Reset:** Use the "Reset" button at any time to clear the timer and cycle counter.
-
-## 🤝 Contributions
-
-Feel free to explore the code, suggest improvements, or report bugs.
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 ---
-**Developed with 💜 by [[PatrickCaramico](https://github.com/PatrickCaramico)]**
+**Desenvolvido com 💜 por [PatrickCaramico](https://github.com/PatrickCaramico)**
