@@ -12,7 +12,7 @@
  <a href="#-visão-geral">Visão Geral</a> •
  <a href="#-demonstração-visual">Demonstração</a> •
  <a href="#-principais-funcionalidades-geral">Funcionalidades</a> •
- <a href="#-tecnologias-utilizadas">Tecnologias</a> •
+ <a href="#-tecnologias">Tecnologias</a> •
  <a href="#-instalação-e-execução-local">Instalação</a> •
  <a href="#-aprendizados-e-desafios">Aprendizados</a> •
  <a href="#-roadmap-próximos-passos">Roadmap</a>
