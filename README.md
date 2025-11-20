@@ -1,5 +1,13 @@
 # ⏳ Gerador de Foco - FocoWave: Seu Aliado de Produtividade com a Técnica Pomodoro
 
+<div align="center">
+  <a href="LINK_DO_SEU_SITE_AQUI" target="_blank">
+    <img src="https://img.shields.io/badge/Acesse_o_Projeto_Online-000?style=for-the-badge&logo=vercel&logoColor=white" alt="Deploy Link">
+  </a>
+</div>
+
+---
+
 ## ✨ Visão Geral
 
 O **FocoWave** é uma ferramenta web elegante e intuitiva, projetada para maximizar sua produtividade e concentração utilizando a renomada Técnica Pomodoro. Inspirado na simplicidade e eficácia, esta aplicação ajuda você a gerenciar seus tempos de trabalho e descanso de forma eficiente, promovendo sessões de foco ininterruptas e descansos merecidos.
@@ -20,10 +28,10 @@ Confira como o **FocoWave** se adapta ao seu estilo, seja no modo claro ou escur
     </tr>
     <tr>
       <td>
-        <img src="assets/images/FocoWave_Claro.png" alt="FocoWave Tema Claro" width="400">
+        <img src="./assets/print-claro.png" alt="FocoWave Tema Claro" width="400">
       </td>
       <td>
-        <img src="assets/images/FocoWave_Escuro.png" alt="FocoWave Tema Escuro" width="400">
+        <img src="./assets/print-escuro.png" alt="FocoWave Tema Escuro" width="400">
       </td>
     </tr>
   </table>
@@ -32,7 +40,7 @@ Confira como o **FocoWave** se adapta ao seu estilo, seja no modo claro ou escur
 ### 🎥 Em Ação
 Veja o FocoWave funcionando (Timer e troca de temas):
 
-![Gif do Projeto](assets/images/Animacao_FocoWave.gif)
+![Gif do Projeto](./assets/demo-focowave.gif)
 
 ---
 
@@ -72,9 +80,31 @@ Esta atualização foca em entregar maior flexibilidade na definição do tempo 
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **HTML5:** Estrutura semântica.
-- **CSS3:** Estilização moderna e responsiva.
-- **JavaScript (ES6+):** Lógica do timer, áudio e persistência de dados.
+<div style="display: inline_block"><br>
+  <img align="center" alt="HTML5" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="center" alt="CSS3" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+  <img align="center" alt="Js" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img align="center" alt="Git" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+</div>
+
+## 📂 Estrutura do Projeto
+
+```bash
+FocoWave/
+├── assets/          # Imagens (prints), ícones e sons
+├── css/             # Estilos (style.css)
+├── js/              # Lógica (script.js, timer.js)
+├── index.html       # Estrutura principal
+└── README.md        # Documentação
+```
+
+## 🗺️ Roadmap (Próximos Passos)
+
+- [x] Adicionar tema Dark/Light (v1.1.0)
+- [x] Persistência de dados local
+- [ ] Transformar em PWA (para instalar no celular)
+- [ ] Adicionar dashboard de estatísticas semanais
+- [ ] Integração com Spotify API
 
 ## 💡 Como Usar
 
@@ -82,10 +112,6 @@ Esta atualização foca em entregar maior flexibilidade na definição do tempo 
 2.  **Escolha seu Som:** Selecione o áudio de fundo ideal.
 3.  **Comece a Focar:** Clique em "Iniciar Foco".
 4.  **Reiniciar:** Use o botão "Reiniciar" para zerar o timer e ciclos.
-
-## 🤝 Contribuições
-
-Sinta-se à vontade para explorar o código, sugerir melhorias ou reportar bugs.
 
 ## 📄 Licença
 
