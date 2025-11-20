@@ -1,26 +1,27 @@
 # ⏳ Gerador de Foco - FocoWave: Seu Aliado de Produtividade com a Técnica Pomodoro
 
 <div align="center">
-  <a href="[https://focowaves.netlify.app/](https://focowaves.netlify.app/)" target="_blank">
-    <img src="[https://img.shields.io/badge/Acesse_o_Projeto_Online-000?style=for-the-badge&logo=vercel&logoColor=white](https://img.shields.io/badge/Acesse_o_Projeto_Online-000?style=for-the-badge&logo=vercel&logoColor=white)" alt="Deploy Link">
+  <a href="https://focowaves.netlify.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Acesse_o_Projeto_Online-000?style=for-the-badge&logo=vercel&logoColor=white" alt="Deploy Link">
   </a>
 </div>
 
 <br>
 
 <p align="center">
- <a href="#sobre">Visão Geral</a> •
- <a href="#demo">Demonstração</a> •
- <a href="#funcionalidades">Funcionalidades</a> •
- <a href="#tech">Tecnologias</a> •
- <a href="#instalacao">Instalação</a> •
- <a href="#aprendizados">Aprendizados</a> •
- <a href="#roadmap">Roadmap</a>
+  <a href="#sobre">Visão Geral</a> •
+  <a href="#demo">Demonstração</a> •
+  <a href="#funcionalidades">Funcionalidades</a> •
+  <a href="#tech">Tecnologias</a> •
+  <a href="#instalacao">Instalação</a> •
+  <a href="#aprendizados">Aprendizados</a> •
+  <a href="#roadmap">Roadmap</a>
 </p>
 
 ---
 
-## <a id="sobre"></a>✨ Visão Geral
+<a id="sobre"></a>
+## ✨ Visão Geral
 
 O **FocoWave** é uma ferramenta web elegante e intuitiva, projetada para maximizar sua produtividade e concentração utilizando a renomada Técnica Pomodoro. Inspirado na simplicidade e eficácia, esta aplicação ajuda você a gerenciar seus tempos de trabalho e descanso de forma eficiente, promovendo sessões de foco ininterruptas e descansos merecidos.
 
@@ -28,7 +29,8 @@ Com uma interface limpa e personalizável, o Gerador de Foco oferece o ambiente 
 
 ---
 
-## <a id="demo"></a>📸 Demonstração Visual
+<a id="demo"></a>
+## 📸 Demonstração Visual
 
 Confira como o **FocoWave** se adapta ao seu estilo, seja no modo claro ou escuro.
 
@@ -81,7 +83,8 @@ Esta atualização foca em entregar maior flexibilidade na definição do tempo 
 
 ---
 
-## <a id="funcionalidades"></a>🚀 Principais Funcionalidades (Geral)
+<a id="funcionalidades"></a>
+## 🚀 Principais Funcionalidades (Geral)
 
 - **Timer Personalizável:** Defina a duração exata para suas sessões de `Foco`, `Pausa Curta` e `Pausa Longa`.
 - **Contador de Ciclos:** Monitore seu progresso visualmente (ex: "Ciclo: 1 de 4").
@@ -90,13 +93,14 @@ Esta atualização foca em entregar maior flexibilidade na definição do tempo 
 - **Persistência:** Suas configurações são salvas automaticamente (Local Storage).
 - **Design Responsivo:** Layout otimizado para diversos dispositivos sem barras de rolagem desnecessárias.
 
-## <a id="tech"></a>🛠️ Tecnologias Utilizadas
+<a id="tech"></a>
+## 🛠️ Tecnologias Utilizadas
 
 <div style="display: inline_block"><br>
-  <img align="center" alt="HTML5" height="40" width="50" src="[https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg](https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg)">
-  <img align="center" alt="CSS3" height="40" width="50" src="[https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg](https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg)">
-  <img align="center" alt="Js" height="40" width="50" src="[https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg](https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg)">
-  <img align="center" alt="Git" height="40" width="50" src="[https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg)">
+  <img align="center" alt="HTML5" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="center" alt="CSS3" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+  <img align="center" alt="Js" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img align="center" alt="Git" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
 </div>
 
 ## 📂 Estrutura do Projeto
