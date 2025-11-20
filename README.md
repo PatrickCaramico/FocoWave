@@ -1,26 +1,26 @@
 # ⏳ Gerador de Foco - FocoWave: Seu Aliado de Produtividade com a Técnica Pomodoro
 
 <div align="center">
-  <a href="[https://focowaves.netlify.app/](https://focowaves.netlify.app/)" target="_blank">
-    <img src="[https://img.shields.io/badge/Acesse_o_Projeto_Online-000?style=for-the-badge&logo=vercel&logoColor=white](https://img.shields.io/badge/Acesse_o_Projeto_Online-000?style=for-the-badge&logo=vercel&logoColor=white)" alt="Deploy Link">
-  </a>
+  <a href="https://focowaves.netlify.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Acesse_o_Projeto_Online-000?style=for-the-badge&logo=vercel&logoColor=white" alt="Deploy Link">
+  </a>
 </div>
 
 <br>
 
 <p align="center">
- <a href="#sobre">Visão Geral</a> •
- <a href="#demo">Demonstração</a> •
- <a href="#funcionalidades">Funcionalidades</a> •
- <a href="#tech">Tecnologias</a> •
- <a href="#instalacao">Instalação</a> •
- <a href="#aprendizados">Aprendizados</a> •
- <a href="#roadmap">Roadmap</a>
+ <a href="#-visão-geral">Visão Geral</a> •
+ <a href="#-demonstração-visual">Demonstração</a> •
+ <a href="#-principais-funcionalidades-geral">Funcionalidades</a> •
+ <a href="#-tecnologias">Tecnologias</a> •
+ <a href="#-instalação-e-execução-local">Instalação</a> •
+ <a href="#-aprendizados-e-desafios">Aprendizados</a> •
+ <a href="#-roadmap-próximos-passos">Roadmap</a>
 </p>
 
 ---
 
-## <a id="sobre"></a>✨ Visão Geral
+## ✨ Visão Geral
 
 O **FocoWave** é uma ferramenta web elegante e intuitiva, projetada para maximizar sua produtividade e concentração utilizando a renomada Técnica Pomodoro. Inspirado na simplicidade e eficácia, esta aplicação ajuda você a gerenciar seus tempos de trabalho e descanso de forma eficiente, promovendo sessões de foco ininterruptas e descansos merecidos.
 
@@ -28,25 +28,25 @@ Com uma interface limpa e personalizável, o Gerador de Foco oferece o ambiente 
 
 ---
 
-## <a id="demo"></a>📸 Demonstração Visual
+## 📸 Demonstração Visual
 
 Confira como o **FocoWave** se adapta ao seu estilo, seja no modo claro ou escuro.
 
 <div align="center">
-  <table>
-    <tr>
-      <td align="center"><b>🌞 Tema Claro</b></td>
-      <td align="center"><b>🌚 Tema Escuro</b></td>
-    </tr>
-    <tr>
-      <td>
-        <img src="assets/images/FocoWave_Claro.png" alt="FocoWave Tema Claro" width="400">
-      </td>
-      <td>
-        <img src="assets/images/FocoWave_Escuro.png" alt="FocoWave Tema Escuro" width="400">
-      </td>
-    </tr>
-  </table>
+  <table>
+    <tr>
+      <td align="center"><b>🌞 Tema Claro</b></td>
+      <td align="center"><b>🌚 Tema Escuro</b></td>
+    </tr>
+    <tr>
+      <td>
+        <img src="assets/images/FocoWave_Claro.png" alt="FocoWave Tema Claro" width="400">
+      </td>
+      <td>
+        <img src="assets/images/FocoWave_Escuro.png" alt="FocoWave Tema Escuro" width="400">
+      </td>
+    </tr>
+  </table>
 </div>
 
 ### 🎥 Em Ação
@@ -73,15 +73,15 @@ Esta atualização foca em entregar maior flexibilidade na definição do tempo 
 
 #### 💡 Guia Rápido (Novos Recursos)
 
-1.  **Alternando Temas:** Use o botão (**Sol/Lua**) no canto superior direito.
-2.  **Definindo Tempo de Foco (H/M):**
-    * **Foco (h):** Insira as horas (ex: `1`).
-    * **Foco (min):** Insira os minutos.
-    * *> Nota: Pausas permanecem apenas em minutos.*
+1.  **Alternando Temas:** Use o botão (**Sol/Lua**) no canto superior direito.
+2.  **Definindo Tempo de Foco (H/M):**
+    * **Foco (h):** Insira as horas (ex: `1`).
+    * **Foco (min):** Insira os minutos.
+    * *> Nota: Pausas permanecem apenas em minutos.*
 
 ---
 
-## <a id="funcionalidades"></a>🚀 Principais Funcionalidades (Geral)
+## 🚀 Principais Funcionalidades (Geral)
 
 - **Timer Personalizável:** Defina a duração exata para suas sessões de `Foco`, `Pausa Curta` e `Pausa Longa`.
 - **Contador de Ciclos:** Monitore seu progresso visualmente (ex: "Ciclo: 1 de 4").
@@ -90,24 +90,24 @@ Esta atualização foca em entregar maior flexibilidade na definição do tempo 
 - **Persistência:** Suas configurações são salvas automaticamente (Local Storage).
 - **Design Responsivo:** Layout otimizado para diversos dispositivos sem barras de rolagem desnecessárias.
 
-## <a id="tech"></a>🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 <div style="display: inline_block"><br>
-  <img align="center" alt="HTML5" height="40" width="50" src="[https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg](https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg)">
-  <img align="center" alt="CSS3" height="40" width="50" src="[https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg](https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg)">
-  <img align="center" alt="Js" height="40" width="50" src="[https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg](https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg)">
-  <img align="center" alt="Git" height="40" width="50" src="[https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg)">
+  <img align="center" alt="HTML5" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="center" alt="CSS3" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+  <img align="center" alt="Js" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img align="center" alt="Git" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
 </div>
 
 ## 📂 Estrutura do Projeto
 
 ```bash
 FocoWave/
-├── assets/          # Imagens (prints), ícones e sons
-├── css/             # Estilos (style.css)
-├── js/              # Lógica (script.js, timer.js)
-├── index.html       # Estrutura principal
-└── README.md        # Documentação
+├── assets/          # Imagens (prints), ícones e sons
+├── css/             # Estilos (style.css)
+├── js/              # Lógica (script.js, timer.js)
+├── index.html       # Estrutura principal
+└── README.md        # Documentação
 ```
 
 ## 🗺️ Roadmap (Próximos Passos)
@@ -120,20 +120,20 @@ FocoWave/
 
 ## 💡 Como Usar
 
-1.  **Defina seus Tempos:** Insira a duração desejada para Foco e Pausas.
-2.  **Escolha seu Som:** Selecione o áudio de fundo ideal.
-3.  **Comece a Focar:** Clique em "Iniciar Foco".
-4.  **Reiniciar:** Use o botão "Reiniciar" para zerar o timer e ciclos.
+1.  **Defina seus Tempos:** Insira a duração desejada para Foco e Pausas.
+2.  **Escolha seu Som:** Selecione o áudio de fundo ideal.
+3.  **Comece a Focar:** Clique em "Iniciar Foco".
+4.  **Reiniciar:** Use o botão "Reiniciar" para zerar o timer e ciclos.
 
 ## 💻 Instalação e Execução Local
 
 Se você deseja rodar este projeto localmente, siga os passos abaixo:
 
 1. **Clone o repositório:**
-   ```bash
-   git clone [https://github.com/PatrickCaramico/FocoWave.git](https://github.com/PatrickCaramico/FocoWave.git)
+   ```bash
+   git clone [https://github.com/PatrickCaramico/FocoWave.git](https://github.com/PatrickCaramico/FocoWave.git)
 
-   cd FocoWave
+   cd FocoWave
 
 ## 📄 Licença
 
@@ -141,11 +141,11 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 ---
 <div align="center">
-  <br>
-  <p><b>Desenvolvido com 💜 por <a href="https://github.com/PatrickCaramico">Patrick Caramico</a></b></p>
-  <p>
-    <a href="https://www.linkedin.com/in/SEU_USUARIO_LINKEDIN" target="_blank">
-      <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank">
-    </a>
-  </p>
+  <br>
+  <p><b>Desenvolvido com 💜 por <a href="https://github.com/PatrickCaramico">Patrick Caramico</a></b></p>
+  <p>
+    <a href="https://www.linkedin.com/in/SEU_USUARIO_LINKEDIN" target="_blank">
+      <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank">
+    </a>
+  </p>
 </div>
