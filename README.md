@@ -1,10 +1,22 @@
 # ⏳ Gerador de Foco - FocoWave: Seu Aliado de Produtividade com a Técnica Pomodoro
 
 <div align="center">
-  <a href="https://focowaves.netlify.app/" target="_blank">
+  <a href="LINK_DO_SEU_SITE_AQUI" target="_blank">
     <img src="https://img.shields.io/badge/Acesse_o_Projeto_Online-000?style=for-the-badge&logo=vercel&logoColor=white" alt="Deploy Link">
   </a>
 </div>
+
+<br>
+
+<p align="center">
+ <a href="#-visão-geral">Visão Geral</a> •
+ <a href="#-demonstração-visual">Demonstração</a> •
+ <a href="#-principais-funcionalidades-geral">Funcionalidades</a> •
+ <a href="#-tecnologias-utilizadas">Tecnologias</a> •
+ <a href="#-instalação-e-execução-local">Instalação</a> •
+ <a href="#-aprendizados-e-desafios">Aprendizados</a> •
+ <a href="#-roadmap-próximos-passos">Roadmap</a>
+</p>
 
 ---
 
@@ -28,10 +40,10 @@ Confira como o **FocoWave** se adapta ao seu estilo, seja no modo claro ou escur
     </tr>
     <tr>
       <td>
-        <img src="assets/images/FocoWave_Claro.png" alt="FocoWave Tema Claro" width="400">
+        <img src="./assets/print-claro.png" alt="FocoWave Tema Claro" width="400">
       </td>
       <td>
-        <img src="assets/images/FocoWave_Escuro.png" alt="FocoWave Tema Escuro" width="400">
+        <img src="./assets/print-escuro.png" alt="FocoWave Tema Escuro" width="400">
       </td>
     </tr>
   </table>
@@ -40,7 +52,7 @@ Confira como o **FocoWave** se adapta ao seu estilo, seja no modo claro ou escur
 ### 🎥 Em Ação
 Veja o FocoWave funcionando (Timer e troca de temas):
 
-![Gif do Projeto](assets/images/Animacao_FocoWave.gif)
+![Gif do Projeto](./assets/demo-focowave.gif)
 
 ---
 
@@ -113,9 +125,27 @@ FocoWave/
 3.  **Comece a Focar:** Clique em "Iniciar Foco".
 4.  **Reiniciar:** Use o botão "Reiniciar" para zerar o timer e ciclos.
 
+## 💻 Instalação e Execução Local
+
+Se você deseja rodar este projeto localmente, siga os passos abaixo:
+
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/PatrickCaramico/FocoWave.git](https://github.com/PatrickCaramico/FocoWave.git)
+
+   cd FocoWave
+
 ## 📄 Licença
 
 Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 ---
-**Desenvolvido com 💜 por [PatrickCaramico](https://github.com/PatrickCaramico)**
+<div align="center">
+  <br>
+  <p><b>Desenvolvido com 💜 por <a href="https://github.com/PatrickCaramico">Patrick Caramico</a></b></p>
+  <p>
+    <a href="https://www.linkedin.com/in/SEU_USUARIO_LINKEDIN" target="_blank">
+      <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank">
+    </a>
+  </p>
+</div>
