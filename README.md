@@ -14,7 +14,6 @@
   <a href="#funcionalidades">Funcionalidades</a> •
   <a href="#tech">Tecnologias</a> •
   <a href="#instalacao">Instalação</a> •
-  <a href="#aprendizados">Aprendizados</a> •
   <a href="#roadmap">Roadmap</a>
 </p>
 
@@ -113,3 +112,45 @@ FocoWave/
 ├── index.html       # Estrutura principal
 └── README.md        # Documentação
 ```
+
+<a id="roadmap"></a>
+## 🗺️ Roadmap (Próximos Passos)
+
+- [x] Adicionar tema Dark/Light (v1.1.0)
+- [x] Persistência de dados local
+- [ ] Transformar em PWA (para instalar no celular)
+- [ ] Adicionar dashboard de estatísticas semanais
+- [ ] Integração com Spotify API
+
+<a id="instalacao"></a>
+## 💡 Como Usar
+
+1.  **Defina seus Tempos:** Insira a duração desejada para Foco e Pausas.
+2.  **Escolha seu Som:** Selecione o áudio de fundo ideal.
+3.  **Comece a Focar:** Clique em "Iniciar Foco".
+4.  **Reiniciar:** Use o botão "Reiniciar" para zerar o timer e ciclos.
+
+## 💻 Instalação e Execução Local
+
+Se você deseja rodar este projeto localmente, siga os passos abaixo:
+
+<a id="instalacao"></a>
+## 💻 Instalação e Execução Local
+
+Se você deseja rodar este projeto localmente, siga os passos abaixo:
+
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/PatrickCaramico/FocoWave.git](https://github.com/PatrickCaramico/FocoWave.git)
+
+   cd FocoWave
+
+## 📄 Licença
+
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
+
+---
+<div align="center">
+  <br>
+  <p><b>Desenvolvido com 💜 por <a href="https://github.com/PatrickCaramico">Patrick Caramico</a></b></p>
+</div>
