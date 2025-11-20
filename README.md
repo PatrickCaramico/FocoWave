@@ -20,10 +20,10 @@ Confira como o **FocoWave** se adapta ao seu estilo, seja no modo claro ou escur
     </tr>
     <tr>
       <td>
-        <img src="./assets/print-claro.png" alt="FocoWave Tema Claro" width="400">
+        <img src="assets/images/FocoWave_Claro.png" alt="FocoWave Tema Claro" width="400">
       </td>
       <td>
-        <img src="./assets/print-escuro.png" alt="FocoWave Tema Escuro" width="400">
+        <img src="assets/images/FocoWave_Escuro.png" alt="FocoWave Tema Escuro" width="400">
       </td>
     </tr>
   </table>
@@ -32,7 +32,7 @@ Confira como o **FocoWave** se adapta ao seu estilo, seja no modo claro ou escur
 ### 🎥 Em Ação
 Veja o FocoWave funcionando (Timer e troca de temas):
 
-![Gif do Projeto](./assets/demo-focowave.gif)
+![Gif do Projeto](assets/images/Animacao_FocoWave.gif)
 
 ---
 
