@@ -103,11 +103,13 @@ Esta atualização foca em entregar maior flexibilidade na definição do tempo 
 
 ```bash
 FocoWave/
-├── assets/          # Imagens (prints), ícones e sons
-├── css/             # Estilos (style.css)
-├── js/              # Lógica (script.js, timer.js)
-├── index.html       # Estrutura principal
-└── README.md        # Documentação
+├── assets/
+│   ├── css/         # Estilos (style.css)
+│   ├── js/          # Lógica (script.js)
+│   ├── images/      # Screenshots e ícones
+│   └── sound/       # Áudios ambientes e notificações
+├── index.html       # Estrutura principal
+└── README.md        # Documentação
 ```
 
 ## 🗺️ Roadmap (Próximos Passos)
@@ -131,9 +133,11 @@ Se você deseja rodar este projeto localmente, siga os passos abaixo:
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/PatrickCaramico/FocoWave.git](https://github.com/PatrickCaramico/FocoWave.git)
+   git clone https://github.com/PatrickCaramico/FocoWave.git
+   cd FocoWave
+   ```
 
-   cd FocoWave
+2. **Abra o arquivo `index.html`** no seu navegador preferido.
 
 ## 📄 Licença
 
@@ -144,8 +148,8 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE).
   <br>
   <p><b>Desenvolvido com 💜 por <a href="https://github.com/PatrickCaramico">Patrick Caramico</a></b></p>
   <p>
-    <a href="https://www.linkedin.com/in/SEU_USUARIO_LINKEDIN" target="_blank">
-      <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank">
+    <a href="https://github.com/PatrickCaramico" target="_blank">
+      <img src="https://img.shields.io/badge/-GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white" target="_blank">
     </a>
   </p>
 </div>
