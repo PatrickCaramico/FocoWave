@@ -1,6 +1,5 @@
 /* Importação de uma fonte limpa */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-/* Importação de Ícones (Font Awesome para o botão de tema) */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
 
@@ -17,7 +16,7 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* ----- O Container Principal (ESCALA MÁXIMA AJUSTADA) ----- */
+/* ----- O Container Principal ----- */
 .container {
     background-color: #1E1E1E;
     padding: 1rem 1.5rem; 
@@ -30,9 +29,39 @@ body {
 }
 
 h1 {
-    margin-top: 0.5rem;
+    margin-top: 1.5rem; /* Aumentado para não bater nos botões do topo */
     color: #BB86FC;
     font-size: 1.7rem; 
+}
+
+/* ----- Seletor de Idioma (NOVO) ----- */
+.lang-wrapper {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+#language-select {
+    background-color: transparent;
+    color: #AAA;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 2px 5px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s;
+}
+
+#language-select:hover {
+    color: #03DAC5;
+    border-color: #03DAC5;
+}
+
+/* Ajuste para as opções ficarem legíveis */
+#language-select option {
+    background-color: #1E1E1E;
+    color: #FFF;
 }
 
 /* ----- Contador de Ciclos ----- */
@@ -52,13 +81,12 @@ h1 {
 }
 
 /* --- Estilização do Tempo Configurável --- */
-
 .time-config {
     display: flex;
-    justify-content: space-between; /* Usando space-between para distribuir melhor o espaço */
-    gap: 3px; /* Reduzido o gap */
+    justify-content: space-between; 
+    gap: 5px; 
     margin-top: 1rem;
-    margin-bottom: 1.5rem; 
+    margin-bottom: 1rem; 
     padding: 0; 
     width: 100%;
     flex-wrap: wrap; 
@@ -68,7 +96,6 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Removido flex-basis para dar mais flexibilidade e confiar no space-between */
 }
 
 .time-config label {
@@ -79,12 +106,11 @@ h1 {
     text-align: center;
 }
 
-/* ESTILO: Container para Horas/Minutos */
 .focus-inputs {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0px; /* Removido o gap interno */
+    gap: 0px; 
 }
 
 .focus-inputs input {
@@ -96,11 +122,10 @@ h1 {
 .focus-inputs span {
     font-size: 0.75rem; 
     color: #AAA;
-    margin-right: 0px; /* ELIMINADO MARGEM AQUI PARA ECONOMIZAR ESPAÇO */
-    margin-left: 2px; /* Adicionado um micro espaçamento à esquerda da label */
+    margin-right: 0px; 
+    margin-left: 2px; 
 }
 
-/* Estilo para inputs de tempo (Pausa Curta e Longa) */
 .time-config input[type="number"] {
     width: 50px; 
     padding: 5px 8px; 
@@ -114,23 +139,84 @@ h1 {
     margin: 0;
 }
 
-/* Remove as setas do input */
 .time-config input::-webkit-outer-spin-button,
 .time-config input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
+/* ----- Toggle Início Automático ----- */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    gap: 10px;
+}
 
-/* ----- Botões de Controle (Iniciar, Resetar) ----- */
+.toggle-container .label-text {
+    font-size: 0.9rem;
+    color: #AAA;
+    font-weight: 500;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #03DAC5;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+
+/* ----- Botões de Controle ----- */
 .controls {
     margin-bottom: 1.5rem;
+    display: flex;           
+    justify-content: center; 
+    gap: 5px;               
 }
 
 .controls button {
     border: none;
     padding: 0.6rem 1.2rem; 
-    margin: 0 5px; 
     border-radius: 5px;
     font-size: 1rem; 
     font-weight: 700;
@@ -148,11 +234,16 @@ h1 {
     color: #121212;
 }
 
+#btn-skip {
+    background-color: #BB86FC;
+    color: #121212;
+}
+
 .controls button:hover {
     opacity: 0.8;
 }
 
-/* ----- Seletor de Sons e Botão de Tema ----- */
+/* ----- Seletor de Sons ----- */
 .sound-picker h3 {
     margin-bottom: 0.8rem;
     font-weight: 400;
@@ -172,7 +263,6 @@ h1 {
     font-size: 0.85rem; 
 }
 
-/* ESTADO ATIVO do Som */
 .sound-btn.active {
     background-color: #03DAC5;
     color: #121212;
@@ -184,11 +274,11 @@ h1 {
     margin-top: 8px;
 }
 
-/* Botão de Alternar Tema (Dark Mode padrão) */
+/* Botão de Alternar Tema */
 #btn-theme-toggle {
     position: absolute;
     top: 15px;
-    right: 3px;
+    right: 15px; /* Ajustado margem */
     background: none;
     border: none;
     font-size: 1.3rem; 
@@ -211,7 +301,6 @@ body.light-mode {
     background-color: #F0F2F5;
     color: #333333;
 }
-/* As regras de Light Mode herdam os tamanhos reduzidos acima */
 
 body.light-mode .container {
     background-color: #FFFFFF;
@@ -220,6 +309,15 @@ body.light-mode .container {
 
 body.light-mode h1 {
     color: #0077B6;
+}
+
+body.light-mode #language-select {
+    color: #666;
+    border-color: #CCC;
+}
+body.light-mode #language-select option {
+    background-color: #FFF;
+    color: #333;
 }
 
 body.light-mode #cycle-counter {
@@ -245,6 +343,16 @@ body.light-mode .sound-picker h3 {
     color: #666;
 }
 
+body.light-mode .toggle-container .label-text {
+    color: #666;
+}
+body.light-mode .slider {
+    background-color: #CCC;
+}
+body.light-mode input:checked + .slider {
+    background-color: #00A896;
+}
+
 body.light-mode #btn-start-pause {
     background-color: #00A896;
     color: #FFFFFF;
@@ -252,6 +360,11 @@ body.light-mode #btn-start-pause {
 
 body.light-mode #btn-reset {
     background-color: #E74C3C;
+    color: #FFFFFF;
+}
+
+body.light-mode #btn-skip {
+    background-color: #8E44AD;
     color: #FFFFFF;
 }
 
@@ -271,4 +384,42 @@ body.light-mode #btn-theme-toggle {
 
 body.light-mode #btn-theme-toggle::before {
     content: "\f185";
+}
+
+/* ============================================================
+   AJUSTES ESPECÍFICOS PARA ESPANHOL (Evitar quebra de layout)
+   ============================================================ */
+
+/* Diminui o título principal pois "Generador de Enfoque" é grande */
+body.es-mode h1 {
+    font-size: 1.5rem; 
+    margin-top: 2.5rem; /* Mais espaço no topo */
+}
+
+/* Ajusta os botões de controle (Iniciar, Pular...) */
+body.es-mode .controls button {
+    font-size: 0.85rem; /* Fonte menor */
+    padding: 0.6rem 0.8rem; /* Menos preenchimento lateral */
+}
+
+/* Ajusta as etiquetas de tempo (Focar, Pausa...) */
+body.es-mode .time-config label {
+    font-size: 0.8rem;
+    white-space: nowrap; /* Tenta evitar quebra de linha no label */
+}
+
+/* Ajusta o container dos inputs de tempo para não estourar */
+body.es-mode .time-group {
+    min-width: 70px; /* Permite ficar um pouco menor */
+}
+
+/* Ajusta o texto do Toggle (Inicio Automático) */
+body.es-mode .toggle-container .label-text {
+    font-size: 0.85rem;
+}
+
+/* Seletor de sons: diminui levemente a fonte dos botões */
+body.es-mode .sound-btn {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.5rem;
 }
