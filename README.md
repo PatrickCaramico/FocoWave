@@ -57,6 +57,32 @@ Veja o FocoWave funcionando (Timer e troca de temas):
 
 ---
 
+## 🚀 Novidades da Versão 1.2.0
+
+### 🌍 Internacionalização (i18n)
+- **Suporte Multi-idioma:** O sistema agora fala **Português**, **Inglês** e **Espanhol**.
+- **Layout Responsivo:** Adaptação inteligente do CSS para acomodar textos mais longos (como em espanhol) sem quebrar o design.
+- **Zero Dependências:** Sistema de tradução criado 100% com Vanilla JavaScript (Dicionário de Objetos).
+
+### 💾 Persistência "Real-Time" (Smart Timer)
+- **Nunca perca o foco:** Se você fechar a aba ou o navegador, o timer continua rodando no "tempo real". Ao voltar, o tempo estará sincronizado, como se o aplicativo nunca tivesse sido fechado.
+- **LocalStorage Avançado:** Salva todas as preferências do usuário (temas, sons, ciclos, idioma e estado do timer).
+
+### 🧠 UX & Feedback Visual
+- **Favicon Dinâmico:** O ícone da aba muda de cor (Verde/Amarelo) via SVG dinâmico para indicar se é hora de Focar ou Pausar, útil quando você está em outra aba.
+- **Título Dinâmico:** O tempo restante aparece no título da aba do navegador.
+- **Notificações Desktop:** Alertas nativos do navegador avisam quando o ciclo termina.
+
+### ⚡ Controle de Fluxo
+- **Auto-Start (Fluxo Contínuo):** Opção para iniciar o próximo ciclo automaticamente.
+- **Botão Pular (Skip):** Permite avançar etapas se terminar a tarefa antes do tempo.
+- **Ciclos Configuráveis:** O usuário decide quantos ciclos (3, 4, 5...) são necessários para a Pausa Longa.
+
+### 🎧 Imersão Sonora
+- **Novos Sons:** Adicionados "Weightless", "Ondas" e "Sweetest Dreams" à biblioteca de ruído branco.
+
+---
+
 ## 🆕 O que há de novo na v1.1.0?
 
 ### ✨ Versão 1.1.0 - O Foco é Seu (Tema & Flexibilidade)
