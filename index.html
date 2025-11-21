@@ -13,9 +13,9 @@
     <main class="container">
         <div class="lang-wrapper">
             <select id="language-select">
-                <option value="pt">🇧🇷 pt</option>
-                <option value="en">🇺🇸 en</option>
-                <option value="es">🇪🇸 es</option>
+                <option value="pt">🇧🇷 PT</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
             </select>
         </div>
 
@@ -73,19 +73,25 @@
         <div class="sound-picker">
             <h3 data-lang-key="label_sounds">Som de Fundo:</h3>
             <button class="sound-btn active" data-sound="none" data-lang-key="sound_none">Nenhum</button>
-            
             <button class="sound-btn" data-sound="rain" data-lang-key="sound_rain">Chuva</button>
             <button class="sound-btn" data-sound="cafe" data-lang-key="sound_cafe">Cafeteria</button>
             <button class="sound-btn" data-sound="noise" data-lang-key="sound_noise">Ruído Branco</button>
             <button class="sound-btn" data-sound="piano" data-lang-key="sound_piano">Piano</button>
             <button class="sound-btn" data-sound="nature" data-lang-key="sound_nature">Natureza</button>
-
             <button class="sound-btn" data-sound="weightless">Ansiedade</button>
             <button class="sound-btn" data-sound="waves" data-lang-key="sound_waves">Ondas</button>
-            <button class="sound-btn" data-sound="dreams">Sonhos Doces</button>
+            <button class="sound-btn" data-sound="dreams">Sonhos Doce</button>
 
             <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
         </div>
+
+        <div class="info-box">
+            <p>
+                <i class="fas fa-info-circle"></i> 
+                <span data-lang-key="info_explanation">Ao completar os ciclos definidos acima, você ganha automaticamente uma <strong>Pausa Longa</strong> para descansar.</span>
+            </p>
+        </div>
+
     </main>
 
     <audio id="audio-rain" src="assets/sound/chuva.mp3" loop></audio>
