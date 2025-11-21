@@ -11,9 +11,17 @@
 <body>
 
     <main class="container">
+        <div class="lang-wrapper">
+            <select id="language-select">
+                <option value="pt">🇧🇷 pt</option>
+                <option value="en">🇺🇸 en</option>
+                <option value="es">🇪🇸 es</option>
+            </select>
+        </div>
+
         <button id="btn-theme-toggle" title="Alternar Tema"></button>
 
-        <h1>Gerador de Foco - FocoWave</h1>
+        <h1 data-lang-key="app_title">Gerador de Foco - FocoWave</h1>
         
         <div id="cycle-counter">Ciclo: 0 de 4</div>
 
@@ -23,41 +31,58 @@
 
         <div class="time-config">
             <div class="time-group focus-group-new">
-                <label for="focus-hour-input" id="label-focus">Focar (h/min):</label>
+                <label for="focus-hour-input" id="label-focus" data-lang-key="label_focus">Focar (h/min):</label>
                 <div class="focus-inputs">
                     <input type="number" id="focus-hour-input" data-mode="focus-h" min="0" max="10" value="0">
-                    <span>h</span>
+                    <span data-lang-key="unit_h">h</span>
                     <input type="number" id="focus-min-input" data-mode="focus-m" min="1" max="59" value="25">
-                    <span>min</span>
+                    <span data-lang-key="unit_min">min</span>
                 </div>
             </div>
 
             <div class="time-group">
-                <label for="short-input" id="label-short">Pausa Curta (min):</label>
+                <label for="short-input" id="label-short" data-lang-key="label_short">Pausa Curta:</label>
                 <input type="number" id="short-input" data-mode="short" min="1" max="60" value="5">
             </div>
 
             <div class="time-group">
-                <label for="long-input" id="label-long">Pausa Longa (min):</label>
+                <label for="long-input" id="label-long" data-lang-key="label_long">Pausa Longa:</label>
                 <input type="number" id="long-input" data-mode="long" min="1" max="180" value="15">
             </div>
-            
+
+            <div class="time-group">
+                <label for="cycles-input" data-lang-key="label_cycles">Ciclos:</label>
+                <input type="number" id="cycles-input" min="1" max="10" value="4">
+            </div>
         </div>
         
+        <div class="toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="auto-start-toggle">
+                <span class="slider"></span>
+            </label>
+            <span class="label-text" data-lang-key="label_auto_start">Início Automático 🔄</span>
+        </div>
+
         <div class="controls">
-            <button id="btn-start-pause">Iniciar Foco</button>
-            <button id="btn-reset">Reiniciar</button>
+            <button id="btn-start-pause" data-lang-key="btn_start">Iniciar Foco</button>
+            <button id="btn-skip" title="Pular" data-lang-key="btn_skip">Pular ⏭️</button>
+            <button id="btn-reset" data-lang-key="btn_reset">Reiniciar</button>
         </div>
 
         <div class="sound-picker">
-            <h3>Som de Fundo:</h3>
-            <button class="sound-btn active" data-sound="none">Nenhum</button>
-            <button class="sound-btn" data-sound="rain">Chuva</button>
-            <button class="sound-btn" data-sound="cafe">Cafeteria</button>
-            <button class="sound-btn" data-sound="noise">Ruído Branco</button>
+            <h3 data-lang-key="label_sounds">Som de Fundo:</h3>
+            <button class="sound-btn active" data-sound="none" data-lang-key="sound_none">Nenhum</button>
             
-            <button class="sound-btn" data-sound="piano">Piano</button>
-            <button class="sound-btn" data-sound="nature">Natureza</button>
+            <button class="sound-btn" data-sound="rain" data-lang-key="sound_rain">Chuva</button>
+            <button class="sound-btn" data-sound="cafe" data-lang-key="sound_cafe">Cafeteria</button>
+            <button class="sound-btn" data-sound="noise" data-lang-key="sound_noise">Ruído Branco</button>
+            <button class="sound-btn" data-sound="piano" data-lang-key="sound_piano">Piano</button>
+            <button class="sound-btn" data-sound="nature" data-lang-key="sound_nature">Natureza</button>
+
+            <button class="sound-btn" data-sound="weightless">Ansiedade</button>
+            <button class="sound-btn" data-sound="waves" data-lang-key="sound_waves">Ondas</button>
+            <button class="sound-btn" data-sound="dreams">Sonhos Doces</button>
 
             <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
         </div>
@@ -68,6 +93,9 @@
     <audio id="audio-noise" src="assets/sound/ruido.mp3" loop></audio>
     <audio id="audio-piano" src="assets/sound/Piano_Relaxante.mp3" loop></audio>
     <audio id="audio-nature" src="assets/sound/natureza.mp3" loop></audio>
+    <audio id="audio-weightless" src="assets/sound/Ansiedade.mp3" loop></audio>
+    <audio id="audio-waves" src="assets/sound/Ocean.mp3" loop></audio>
+    <audio id="audio-dreams" src="assets/sound/Sonhos_doce.mp3" loop></audio>
     <audio id="audio-alert" src="assets/sound/notificacao.mp3"></audio>
 
     <script src="assets/js/script.js"></script>
