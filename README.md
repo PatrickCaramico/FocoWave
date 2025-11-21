@@ -54,7 +54,7 @@ Confira como o **FocoWave** se adapta ao seu estilo, seja no modo claro ou escur
 ### 🎥 Em Ação
 Veja o FocoWave funcionando (Timer e troca de temas):
 
-![Gif do Projeto](assets/images/Animacao_FocoWave.gif)
+![Gif do Projeto](assets/images/FocoWave_v1.2.gif)
 
 ---
 <a id="atualizacao"></a>
