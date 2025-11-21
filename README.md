@@ -58,6 +58,25 @@ Veja o FocoWave funcionando (Timer e troca de temas):
 
 ---
 <a id="atualizacao"></a>
+### [V1.2.1] - Otimização de Layout e Correções Críticas
+
+Esta atualização foca em corrigir problemas de funcionalidade e layout, garantindo estabilidade total na navegação e nos controles.
+
+#### ✅ Correções Críticas (Bug Fixes)
+
+| Componente | Status | Descrição |
+| :---: | :---: | :--- |
+| **Controles** | **FIXED** | Corrigido o bug que impedia o funcionamento dos botões **Reiniciar** e **Pular** após a inicialização do script. |
+| **Áudio** | **FIXED** | Estabilidade garantida para as músicas de fundo. A lógica do `AudioContext` foi refeita para iniciar e retomar de forma robusta no clique do usuário. |
+| **Layout Geral** | **FIXED** | Eliminada a barra de rolagem vertical indesejada em 100% de zoom, otimizando o preenchimento e centralização do cartão. |
+
+#### ✨ Melhorias e Otimizações
+
+* **Otimização de Layout Vertical:** Implementada a estratégia **"Compacto & Largo"** (aumento do `max-width` para 450px e redução de margens verticais) para melhor aproveitamento de tela e alinhamento do conteúdo.
+* **Onboarding Integrado:** A dica flutuante foi substituída por uma **Caixa de Informação (Info Box)** estática no rodapé do cartão.
+* **Legibilidade do Ciclo:** Ajuste na explicação de ciclo com quebra de linha (`<br>`) para melhor clareza sobre o fluxo Foco > Pausa Curta > Pausa Longa.
+
+---
 ## 🚀 Novidades da Versão 1.2.0
 
 ### 🌍 Internacionalização (i18n)
