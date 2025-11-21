@@ -12,6 +12,7 @@
   <a href="#sobre">Visão Geral</a> •
   <a href="#demo">Demonstração</a> •
   <a href="#funcionalidades">Funcionalidades</a> •
+  <a href="#atualizacao">Atualizações</a> •
   <a href="#tech">Tecnologias</a> •
   <a href="#instalacao">Instalação</a> •
   <a href="#roadmap">Roadmap</a>
@@ -56,7 +57,7 @@ Veja o FocoWave funcionando (Timer e troca de temas):
 ![Gif do Projeto](assets/images/Animacao_FocoWave.gif)
 
 ---
-
+<a id="atualizacao"></a>
 ## 🚀 Novidades da Versão 1.2.0
 
 ### 🌍 Internacionalização (i18n)
