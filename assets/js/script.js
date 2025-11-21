@@ -11,12 +11,12 @@ const LS_FOCUS_M = 'pomodoroFocusM';
 const LS_AUTO_START = 'pomodoroAutoStart';
 const LS_CYCLES_LIMIT = 'pomodoroCyclesLimit'; 
 const LS_TARGET_TIME = 'pomodoroTargetTime'; 
-const LS_LANG = 'pomodoroLang'; // NOVO
+const LS_LANG = 'pomodoroLang'; 
 
 // Ícone Original
 const originalFaviconHref = "assets/images/Icone.ico"; 
 
-// ----- DICIONÁRIO DE TRADUÇÕES (V1.3.0) -----
+// ----- DICIONÁRIO DE TRADUÇÕES -----
 const translations = {
     pt: {
         app_title: "Gerador de Foco - FocoWave",
@@ -40,7 +40,7 @@ const translations = {
         sound_none: "Nenhum",
         sound_rain: "Chuva",
         sound_cafe: "Cafeteria",
-        sound_noise: "Ruído Branco",
+        sound_noise: "Ruido Branco",
         sound_piano: "Piano",
         sound_nature: "Natureza",
         sound_waves: "Ondas",
@@ -48,7 +48,10 @@ const translations = {
         notif_title_pause: "Hora da Pausa! ☕",
         notif_body_pause: "Ciclo concluído! Respire um pouco.",
         notif_title_focus: "Hora de Focar! 🚀",
-        notif_body_focus: "Pausa finalizada! Vamos voltar ao fluxo?"
+        notif_body_focus: "Pausa finalizada! Vamos voltar ao fluxo?",
+        
+        // CORREÇÃO AQUI 👇
+        info_explanation: "Ao completar os ciclos definidos acima, você ganha automaticamente uma Pausa Longa para descansar. <br><br>Assim que o primeiro ciclo for concluído, será iniciado uma pausa curta."
     },
     en: {
         app_title: "Focus Generator - FocoWave",
@@ -80,7 +83,10 @@ const translations = {
         notif_title_pause: "Break Time! ☕",
         notif_body_pause: "Cycle finished! Take a breath.",
         notif_title_focus: "Focus Time! 🚀",
-        notif_body_focus: "Break over! Let's get back to flow."
+        notif_body_focus: "Break over! Let's get back to flow.",
+
+        // CORREÇÃO AQUI 👇
+        info_explanation: "After completing the cycles defined above, you automatically earn a Long Break to rest. <br><br> Once the cycle is completed, a short break will begin."
     },
     es: {
         app_title: "Generador de Enfoque - FocoWave",
@@ -112,7 +118,10 @@ const translations = {
         notif_title_pause: "¡Hora de Descanso! ☕",
         notif_body_pause: "¡Ciclo terminado! Respira un poco.",
         notif_title_focus: "¡Hora de Enfocarse! 🚀",
-        notif_body_focus: "¡Pausa terminada! Volvamos al flujo."
+        notif_body_focus: "¡Pausa terminada! Volvamos al flujo.",
+
+        // CORREÇÃO AQUI 👇
+        info_explanation: "Al completar los ciclos definidos arriba, obtienes automáticamente una Pausa Larga para descansar. <br><br> Tan pronto como se complete el ciclo, se iniciará una pausa corta."
     }
 };
 
@@ -122,12 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const display = document.getElementById('timer-display');
     const btnStartPause = document.getElementById('btn-start-pause');
-    const btnReset = document.getElementById('btn-reset');
+    const btnReset = document.getElementById('btn-reset'); 
     const btnSkip = document.getElementById('btn-skip');
     const faviconElement = document.querySelector("link[rel~='icon']");
     
     const autoStartToggle = document.getElementById('auto-start-toggle');
-    const languageSelect = document.getElementById('language-select'); // NOVO
+    const languageSelect = document.getElementById('language-select');
 
     const focusHourInput = document.getElementById('focus-hour-input'); 
     const focusMinInput = document.getElementById('focus-min-input');
@@ -142,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const btnThemeToggle = document.getElementById('btn-theme-toggle');
 
-    // Elementos de Áudio
     const audioRain = document.getElementById('audio-rain');
     const audioCafe = document.getElementById('audio-cafe');
     const audioNoise = document.getElementById('audio-noise');
@@ -167,42 +175,27 @@ document.addEventListener('DOMContentLoaded', () => {
     let cyclesLimit = 4; 
     let currentTheme = 'dark';
     let targetTime = null; 
-    let currentLang = 'pt'; // Padrão
-
+    let currentLang = 'pt'; 
 
     // ----- 3. FUNÇÕES HELPER -----
     
-    // --- FUNÇÃO DE TRADUÇÃO ATUALIZADA ---
     function updateLanguage(lang) {
         currentLang = lang;
         const t = translations[lang];
-
-        // Atualiza textos fixos
         document.querySelectorAll('[data-lang-key]').forEach(el => {
             const key = el.getAttribute('data-lang-key');
-            if (t[key]) {
-                el.textContent = t[key];
-            }
+            if (t[key]) el.innerHTML = t[key]; // Mudança para innerHTML para renderizar o <br>
         });
-
-        // --- NOVO: Ajuste de Layout para Espanhol ---
-        if (lang === 'es') {
-            document.body.classList.add('es-mode');
-        } else {
-            document.body.classList.remove('es-mode');
-        }
-        // -------------------------------------------
-
+        if (lang === 'es') document.body.classList.add('es-mode');
+        else document.body.classList.remove('es-mode');
         updateCycleDisplay();
         updateDisplay(); 
-        
         languageSelect.value = lang;
     }
 
     function getTimesFromInputs() {
         const focusHours = parseInt(focusHourInput.value, 10) * 3600; 
         const focusMinutes = parseInt(focusMinInput.value, 10) * 60; 
-        
         return {
             focus: focusHours + focusMinutes,
             short: parseInt(shortInput.value, 10) * 60,
@@ -213,30 +206,21 @@ document.addEventListener('DOMContentLoaded', () => {
     function saveSettings() {
         localStorage.setItem(LS_FOCUS_H, focusHourInput.value);
         localStorage.setItem(LS_FOCUS_M, focusMinInput.value);
-        
-        const breakTimes = {
-            short: shortInput.value,
-            long: longInput.value
-        };
+        const breakTimes = { short: shortInput.value, long: longInput.value };
         localStorage.setItem(LS_TIMES, JSON.stringify(breakTimes)); 
-        
         localStorage.setItem(LS_SOUND, currentSound);
         localStorage.setItem(LS_CYCLE, currentCycle);
         localStorage.setItem(LS_THEME, currentTheme);
         localStorage.setItem(LS_AUTO_START, autoStartToggle.checked);
         localStorage.setItem(LS_CYCLES_LIMIT, cyclesInput.value);
-        localStorage.setItem(LS_LANG, currentLang); // Salva idioma
-        
+        localStorage.setItem(LS_LANG, currentLang); 
         localStorage.setItem('pomodoroCurrentMode', currentMode);
-        if (isPaused) {
-             localStorage.setItem('pomodoroCurrentTime', currentTime);
-        }
+        if (isPaused) localStorage.setItem('pomodoroCurrentTime', currentTime);
     }
     
     function loadSettings() {
         const savedFocusH = localStorage.getItem(LS_FOCUS_H);
         const savedFocusM = localStorage.getItem(LS_FOCUS_M);
-        
         if (savedFocusH) focusHourInput.value = savedFocusH;
         if (savedFocusM) focusMinInput.value = savedFocusM;
 
@@ -247,46 +231,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const savedSound = localStorage.getItem(LS_SOUND);
-        const savedCycle = parseInt(localStorage.getItem(LS_CYCLE), 10);
-        const savedTheme = localStorage.getItem(LS_THEME);
-        const savedAutoStart = localStorage.getItem(LS_AUTO_START);
-        const savedCyclesLimit = localStorage.getItem(LS_CYCLES_LIMIT);
-        const savedLang = localStorage.getItem(LS_LANG);
-        
-        const savedMode = localStorage.getItem('pomodoroCurrentMode');
-        const savedTime = localStorage.getItem('pomodoroCurrentTime');
-        const savedTarget = localStorage.getItem(LS_TARGET_TIME); 
-
         if (savedSound) currentSound = savedSound;
+        
+        const savedCycle = parseInt(localStorage.getItem(LS_CYCLE), 10);
         if (!isNaN(savedCycle)) currentCycle = savedCycle;
 
+        const savedTheme = localStorage.getItem(LS_THEME);
         if (savedTheme) {
             currentTheme = savedTheme;
             document.body.classList.toggle('light-mode', currentTheme === 'light');
         }
 
+        const savedAutoStart = localStorage.getItem(LS_AUTO_START);
         if (savedAutoStart === 'true') {
             isAutoStart = true;
             autoStartToggle.checked = true;
         }
 
+        const savedCyclesLimit = localStorage.getItem(LS_CYCLES_LIMIT);
         if (savedCyclesLimit) {
             cyclesLimit = parseInt(savedCyclesLimit, 10);
-            cyclesInput.value = cyclesLimit;
+            cyclesInput.value = savedCyclesLimit;
         }
 
-        // Carrega Idioma
-        if (savedLang && translations[savedLang]) {
-            currentLang = savedLang;
-        }
+        const savedLang = localStorage.getItem(LS_LANG);
+        if (savedLang && translations[savedLang]) currentLang = savedLang;
         updateLanguage(currentLang);
         
+        const savedMode = localStorage.getItem('pomodoroCurrentMode');
         if (savedMode) currentMode = savedMode;
+
+        const savedTime = localStorage.getItem('pomodoroCurrentTime');
+        const savedTarget = localStorage.getItem(LS_TARGET_TIME); 
 
         if (savedTarget) {
             const now = Date.now();
             const remaining = Math.ceil((parseInt(savedTarget, 10) - now) / 1000);
-            
             if (remaining > 0) {
                 currentTime = remaining;
                 targetTime = parseInt(savedTarget, 10);
@@ -298,11 +278,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 countdown(); 
             }
         } else {
-            if (savedTime) {
-                currentTime = parseInt(savedTime, 10);
-            } else {
-                currentTime = getTimesFromInputs().focus;
-            }
+            if (savedTime) currentTime = parseInt(savedTime, 10);
+            else currentTime = getTimesFromInputs().focus;
         }
     }
 
@@ -311,17 +288,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const colorFocus = '%2303DAC5'; 
         const colorPause = '%23FFC107'; 
         let color = mode === 'focus' ? colorFocus : colorPause;
-
-        const svg = `
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50" fill="${color}" />
-            </svg>
-        `;
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="${color}" /></svg>`;
         faviconElement.href = `data:image/svg+xml,${svg}`;
     }
 
     function resetFavicon() {
-        if (faviconElement) faviconElement.href = originalFaviconHref;
+        if (faviconElement) resetFavicon();
     }
 
     function updateCycleDisplay() {
@@ -333,47 +305,38 @@ document.addEventListener('DOMContentLoaded', () => {
         const minutes = Math.floor(currentTime / 60);
         const seconds = currentTime % 60;
         display.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-        
         document.title = `${display.textContent} - FocoWave`;
-        
-        // Lógica de texto do botão baseada na tradução
         const t = translations[currentLang];
-        if (isPaused) {
-            btnStartPause.textContent = currentMode === 'focus' ? t.btn_start_focus : t.btn_start_pause;
-        } else {
-            btnStartPause.textContent = t.btn_pause;
-        }
-        
+        if (isPaused) btnStartPause.textContent = currentMode === 'focus' ? t.btn_start_focus : t.btn_start_pause;
+        else btnStartPause.textContent = t.btn_pause;
         document.body.setAttribute('data-mode', currentMode);
     }
     
     function stopAllSounds() {
-        audioRain.pause();
-        audioCafe.pause();
-        audioNoise.pause();
-        audioPiano.pause();
-        audioNature.pause();
-        audioWeightless.pause();
-        audioWaves.pause();
-        audioDreams.pause();
-        
-        if (currentAudio) {
-            currentAudio.currentTime = 0;
-        }
+        audioRain.pause(); audioCafe.pause(); audioNoise.pause(); audioPiano.pause(); audioNature.pause();
+        audioWeightless.pause(); audioWaves.pause(); audioDreams.pause();
+        if (currentAudio) currentAudio.currentTime = 0;
         currentAudio = null;
     }
 
     function playCurrentSound() {
         stopAllSounds();
 
-        if (currentSound === 'rain') { currentAudio = audioRain; }    
-        else if (currentSound === 'cafe') { currentAudio = audioCafe; }    
-        else if (currentSound === 'noise') { currentAudio = audioNoise; }    
-        else if (currentSound === 'piano') { currentAudio = audioPiano; }    
-        else if (currentSound === 'nature') { currentAudio = audioNature; }
-        else if (currentSound === 'weightless') { currentAudio = audioWeightless; }
-        else if (currentSound === 'waves') { currentAudio = audioWaves; }
-        else if (currentSound === 'dreams') { currentAudio = audioDreams; }
+        if (!audioContext) {
+             audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioContext.state === 'suspended') {
+             audioContext.resume().catch(e => console.error("Falha ao retomar AudioContext:", e));
+        }
+        
+        if (currentSound === 'rain') currentAudio = audioRain;    
+        else if (currentSound === 'cafe') currentAudio = audioCafe;    
+        else if (currentSound === 'noise') currentAudio = audioNoise;    
+        else if (currentSound === 'piano') currentAudio = audioPiano;    
+        else if (currentSound === 'nature') currentAudio = audioNature;
+        else if (currentSound === 'weightless') currentAudio = audioWeightless;
+        else if (currentSound === 'waves') currentAudio = audioWaves;
+        else if (currentSound === 'dreams') currentAudio = audioDreams;
 
         if (currentAudio) {
             currentAudio.volume = volumeSlider.value;
@@ -384,33 +347,22 @@ document.addEventListener('DOMContentLoaded', () => {
     function switchMode(newMode) {
         currentMode = newMode;
         const times = getTimesFromInputs();    
-
-        if (currentMode === 'focus') { currentTime = times.focus; }    
-        else if (currentMode === 'short') { currentTime = times.short; }    
-        else if (currentMode === 'long') { currentTime = times.long; }
-
+        if (currentMode === 'focus') currentTime = times.focus;    
+        else if (currentMode === 'short') currentTime = times.short;    
+        else if (currentMode === 'long') currentTime = times.long;
         updateFavicon(currentMode);
         updateDisplay();
-        
         localStorage.removeItem(LS_TARGET_TIME);
-        
-        if (isPaused) {
-            stopAllSounds();
-        }
+        if (isPaused) stopAllSounds();
     }
 
     function sendNotification() {
         if (!("Notification" in window)) return;
-
         if (Notification.permission === "granted") {
             const t = translations[currentLang];
             const title = currentMode === 'focus' ? t.notif_title_pause : t.notif_title_focus;
             const body = currentMode === 'focus' ? t.notif_body_pause : t.notif_body_focus;
-            
-            new Notification("FocoWave", {
-                body: body,
-                icon: "assets/images/Icone.ico" 
-            });
+            new Notification("FocoWave", { body: body, icon: "assets/images/Icone.ico" });
         }
     }
     
@@ -425,26 +377,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function startTimerLogic(createNewTarget = true) {
          clearInterval(timerInterval);
-         
          if (createNewTarget) {
              targetTime = Date.now() + (currentTime * 1000);
              localStorage.setItem(LS_TARGET_TIME, targetTime);
          }
-
          timerInterval = setInterval(countdown, 1000);
          isPaused = false;
-         
          updateFavicon(currentMode);
-
-         if (currentMode === 'focus') {
-             playCurrentSound();
-         } else {
-             stopAllSounds();
-         }
+         
+         if (currentMode === 'focus') playCurrentSound();
+         else stopAllSounds();
+         
          updateDisplay();
     }
-
-    // ----- 4. O TIMER -----
 
     function countdown() {
         if (targetTime) {
@@ -459,14 +404,12 @@ document.addEventListener('DOMContentLoaded', () => {
             currentTime = 0; 
             clearInterval(timerInterval);
             localStorage.removeItem(LS_TARGET_TIME); 
-
             audioAlert.play();
             sendNotification();
 
             if (currentMode === 'focus') {
                 currentCycle++;
                 updateCycleDisplay();
-                
                 if (currentCycle >= cyclesLimit) {
                     currentCycle = 0;
                     updateCycleDisplay();
@@ -489,17 +432,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             return;
         }
-
         updateDisplay();
     }
 
     // ----- 5. EVENT LISTENERS -----
-
+    
     btnStartPause.addEventListener('click', () => {
         if ("Notification" in window && Notification.permission !== "granted" && Notification.permission !== "denied") {
             Notification.requestPermission();
         }
-
         if (isPaused) {
             if (currentTime <= 0) initTimer(); 
             startTimerLogic(true); 
@@ -507,10 +448,8 @@ document.addEventListener('DOMContentLoaded', () => {
             isPaused = true;
             clearInterval(timerInterval);
             stopAllSounds();
-            
             localStorage.removeItem(LS_TARGET_TIME);
             saveSettings();
-            
             updateDisplay();
             resetFavicon();
         }
@@ -521,11 +460,9 @@ document.addEventListener('DOMContentLoaded', () => {
         stopAllSounds();
         isPaused = true; 
         localStorage.removeItem(LS_TARGET_TIME); 
-        
         if (currentMode === 'focus') {
             currentCycle++;
             updateCycleDisplay();
-
             if (currentCycle >= cyclesLimit) {
                 currentCycle = 0;
                 updateCycleDisplay();
@@ -536,8 +473,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             switchMode('focus');
         }
-
-        updateDisplay();
+        updateDisplay(); 
         updateFavicon(currentMode);
         saveSettings();
     });
@@ -566,7 +502,6 @@ document.addEventListener('DOMContentLoaded', () => {
         saveSettings();
     });
 
-    // Listener do Seletor de Idioma
     languageSelect.addEventListener('change', (e) => {
         updateLanguage(e.target.value);
         saveSettings();
@@ -576,14 +511,9 @@ document.addEventListener('DOMContentLoaded', () => {
         input.addEventListener('input', () => {
             if (input.id === 'cycles-input') return;
             const inputMode = input.getAttribute('data-mode');
-            
             if (inputMode === 'focus-h' || inputMode === 'focus-m') {
-                if (currentMode === 'focus') {
-                    switchMode('focus');
-                }
-            } else if (inputMode === currentMode) {
-                switchMode(currentMode);
-            }
+                if (currentMode === 'focus') switchMode('focus');
+            } else if (inputMode === currentMode) switchMode(currentMode);
             saveSettings();
         });
     });
@@ -600,23 +530,16 @@ document.addEventListener('DOMContentLoaded', () => {
             soundButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             
-            if (!isPaused && currentMode === 'focus') {
-                playCurrentSound();
-            }
+            if (!isPaused && currentMode === 'focus') playCurrentSound();
             saveSettings();
         });
     });
 
     volumeSlider.addEventListener('input', () => {
         const volume = volumeSlider.value;
-        audioRain.volume = volume;
-        audioCafe.volume = volume;
-        audioNoise.volume = volume;
-        audioPiano.volume = volume;
-        audioNature.volume = volume;
-        audioWeightless.volume = volume;
-        audioWaves.volume = volume;
-        audioDreams.volume = volume;
+        audioRain.volume = volume; audioCafe.volume = volume; audioNoise.volume = volume;
+        audioPiano.volume = volume; audioNature.volume = volume;
+        audioWeightless.volume = volume; audioWaves.volume = volume; audioDreams.volume = volume;
     });
 
     // ----- 6. INICIALIZAÇÃO -----
@@ -625,24 +548,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDisplay();
         updateCycleDisplay();
     }
-    
     const activeSoundButton = document.querySelector(`.sound-btn[data-sound="${currentSound}"]`);
-    if (activeSoundButton) {
-        activeSoundButton.classList.add('active');
-    }
-
-    function unlockAudioContext() {
-        if (!audioContext) {
-            audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        }
-        if (audioContext.state === 'suspended') {
-            audioContext.resume();
-        }
-        document.body.removeEventListener('click', unlockAudioContext);
-        document.body.removeEventListener('touchstart', unlockAudioContext);
-    }
-
-    document.body.addEventListener('click', unlockAudioContext);
-    document.body.addEventListener('touchstart', unlockAudioContext);
-
+    if (activeSoundButton) activeSoundButton.classList.add('active');
 });
